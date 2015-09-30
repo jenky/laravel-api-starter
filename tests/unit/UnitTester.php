@@ -8,6 +8,7 @@
 
 /**
  * Inherited Methods.
+ *
  * @method void wantToTest($text)
  * @method void wantTo($text)
  * @method void execute($callable)
@@ -33,6 +34,7 @@ class UnitTester extends \Codeception\Actor
      * @param string $message
      *
      * @return mixed
+     *
      * @see \Codeception\Module\Asserts::assertEquals()
      */
     public function assertEquals($expected, $actual, $message = null)
@@ -48,6 +50,7 @@ class UnitTester extends \Codeception\Actor
      * @param        $expected
      * @param        $actual
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertNotEquals()
      */
     public function assertNotEquals($expected, $actual, $message = null)
@@ -63,6 +66,7 @@ class UnitTester extends \Codeception\Actor
      * @param        $expected
      * @param        $actual
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertGreaterThan()
      */
     public function assertGreaterThan($expected, $actual, $message = null)
@@ -89,6 +93,7 @@ class UnitTester extends \Codeception\Actor
      * @param        $expected
      * @param        $actual
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertGreaterThanOrEqual()
      */
     public function assertGreaterThanOrEqual($expected, $actual, $message = null)
@@ -115,6 +120,7 @@ class UnitTester extends \Codeception\Actor
      * @param        $expected
      * @param        $actual
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertLessThan()
      */
     public function assertLessThan($expected, $actual, $message = null)
@@ -130,6 +136,7 @@ class UnitTester extends \Codeception\Actor
      * @param        $expected
      * @param        $actual
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertLessThanOrEqual()
      */
     public function assertLessThanOrEqual($expected, $actual, $message = null)
@@ -145,6 +152,7 @@ class UnitTester extends \Codeception\Actor
      * @param        $needle
      * @param        $haystack
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertContains()
      */
     public function assertContains($needle, $haystack, $message = null)
@@ -160,6 +168,7 @@ class UnitTester extends \Codeception\Actor
      * @param        $needle
      * @param        $haystack
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertNotContains()
      */
     public function assertNotContains($needle, $haystack, $message = null)
@@ -174,6 +183,7 @@ class UnitTester extends \Codeception\Actor
      *
      * @param        $actual
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertEmpty()
      */
     public function assertEmpty($actual, $message = null)
@@ -188,6 +198,7 @@ class UnitTester extends \Codeception\Actor
      *
      * @param        $actual
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertNotEmpty()
      */
     public function assertNotEmpty($actual, $message = null)
@@ -202,6 +213,7 @@ class UnitTester extends \Codeception\Actor
      *
      * @param        $actual
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertNull()
      */
     public function assertNull($actual, $message = null)
@@ -216,6 +228,7 @@ class UnitTester extends \Codeception\Actor
      *
      * @param        $actual
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertNotNull()
      */
     public function assertNotNull($actual, $message = null)
@@ -230,6 +243,7 @@ class UnitTester extends \Codeception\Actor
      *
      * @param        $condition
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertTrue()
      */
     public function assertTrue($condition, $message = null)
@@ -244,6 +258,7 @@ class UnitTester extends \Codeception\Actor
      *
      * @param        $condition
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertFalse()
      */
     public function assertFalse($condition, $message = null)
@@ -257,6 +272,7 @@ class UnitTester extends \Codeception\Actor
      * Fails the test with message.
      *
      * @param $message
+     *
      * @see \Codeception\Module\Asserts::fail()
      */
     public function fail($message)

@@ -12,7 +12,7 @@ class ApiController extends Controller
      * Find resource by id using api helper.
      * 
      * @param mixed $resource
-     * @param int $id
+     * @param int   $id
      * 
      * @return json
      */

@@ -8,6 +8,7 @@
 
 /**
  * Inherited Methods.
+ *
  * @method void wantToTest($text)
  * @method void wantTo($text)
  * @method void execute($callable)
@@ -41,6 +42,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $username
      * @param $password
+     *
      * @see \Codeception\Module\PhpBrowser::amHttpAuthenticated()
      */
     public function amHttpAuthenticated($username, $password)
@@ -63,6 +65,7 @@ class AcceptanceTester extends \Codeception\Actor
      * ```
      *
      * @param $page
+     *
      * @see \Codeception\Module\PhpBrowser::amOnPage()
      */
     public function amOnPage($page)
@@ -81,6 +84,7 @@ class AcceptanceTester extends \Codeception\Actor
      * $I->amOnPage('/quickstart'); // moves to http://codeception.com/quickstart
      * ?>
      * ```
+     *
      * @see \Codeception\Module\PhpBrowser::amOnUrl()
      */
     public function amOnUrl($url)
@@ -109,6 +113,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $subdomain
      *
      * @return mixed
+     *
      * @see \Codeception\Module\PhpBrowser::amOnSubdomain()
      */
     public function amOnSubdomain($subdomain)
@@ -136,6 +141,7 @@ class AcceptanceTester extends \Codeception\Actor
      * If Codeception lacks important Guzzle Client methods, implement them and submit patches.
      *
      * @param callable $function
+     *
      * @see \Codeception\Module\PhpBrowser::executeInGuzzle()
      */
     public function executeInGuzzle($function)
@@ -175,6 +181,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $link
      * @param $context
+     *
      * @see \Codeception\Lib\InnerBrowser::click()
      */
     public function click($link, $context = null)
@@ -198,7 +205,8 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $selector
-     * Conditional Assertion: Test won't be stopped on fail
+     *                       Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::see()
      */
     public function canSee($text, $selector = null)
@@ -222,6 +230,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $selector
+     *
      * @see \Codeception\Lib\InnerBrowser::see()
      */
     public function see($text, $selector = null)
@@ -245,7 +254,8 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $selector
-     * Conditional Assertion: Test won't be stopped on fail
+     *                       Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSee()
      */
     public function cantSee($text, $selector = null)
@@ -269,6 +279,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $selector
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSee()
      */
     public function dontSee($text, $selector = null)
@@ -291,7 +302,8 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $url
-     * Conditional Assertion: Test won't be stopped on fail
+     *                   Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeLink()
      */
     public function canSeeLink($text, $url = null)
@@ -314,6 +326,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $url
+     *
      * @see \Codeception\Lib\InnerBrowser::seeLink()
      */
     public function seeLink($text, $url = null)
@@ -336,7 +349,8 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $text
      * @param null $url
-     * Conditional Assertion: Test won't be stopped on fail
+     *                  Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeLink()
      */
     public function cantSeeLink($text, $url = null)
@@ -359,6 +373,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $text
      * @param null $url
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeLink()
      */
     public function dontSeeLink($text, $url = null)
@@ -382,6 +397,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $uri
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeInCurrentUrl()
      */
     public function canSeeInCurrentUrl($uri)
@@ -404,6 +420,7 @@ class AcceptanceTester extends \Codeception\Actor
      * ```
      *
      * @param $uri
+     *
      * @see \Codeception\Lib\InnerBrowser::seeInCurrentUrl()
      */
     public function seeInCurrentUrl($uri)
@@ -424,6 +441,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $uri
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeInCurrentUrl()
      */
     public function cantSeeInCurrentUrl($uri)
@@ -443,6 +461,7 @@ class AcceptanceTester extends \Codeception\Actor
      * ```
      *
      * @param $uri
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeInCurrentUrl()
      */
     public function dontSeeInCurrentUrl($uri)
@@ -465,6 +484,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $uri
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCurrentUrlEquals()
      */
     public function canSeeCurrentUrlEquals($uri)
@@ -486,6 +506,7 @@ class AcceptanceTester extends \Codeception\Actor
      * ```
      *
      * @param $uri
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCurrentUrlEquals()
      */
     public function seeCurrentUrlEquals($uri)
@@ -508,6 +529,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $uri
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCurrentUrlEquals()
      */
     public function cantSeeCurrentUrlEquals($uri)
@@ -529,6 +551,7 @@ class AcceptanceTester extends \Codeception\Actor
      * ```
      *
      * @param $uri
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCurrentUrlEquals()
      */
     public function dontSeeCurrentUrlEquals($uri)
@@ -550,6 +573,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $uri
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCurrentUrlMatches()
      */
     public function canSeeCurrentUrlMatches($uri)
@@ -570,6 +594,7 @@ class AcceptanceTester extends \Codeception\Actor
      * ```
      *
      * @param $uri
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCurrentUrlMatches()
      */
     public function seeCurrentUrlMatches($uri)
@@ -591,6 +616,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $uri
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCurrentUrlMatches()
      */
     public function cantSeeCurrentUrlMatches($uri)
@@ -611,6 +637,7 @@ class AcceptanceTester extends \Codeception\Actor
      * ```
      *
      * @param $uri
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCurrentUrlMatches()
      */
     public function dontSeeCurrentUrlMatches($uri)
@@ -634,7 +661,9 @@ class AcceptanceTester extends \Codeception\Actor
      * @param null $uri
      *
      * @internal param $url
+     *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::grabFromCurrentUrl()
      */
     public function grabFromCurrentUrl($uri = null)
@@ -657,6 +686,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $checkbox
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCheckboxIsChecked()
      */
     public function canSeeCheckboxIsChecked($checkbox)
@@ -678,6 +708,7 @@ class AcceptanceTester extends \Codeception\Actor
      * ```
      *
      * @param $checkbox
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCheckboxIsChecked()
      */
     public function seeCheckboxIsChecked($checkbox)
@@ -699,6 +730,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $checkbox
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCheckboxIsChecked()
      */
     public function cantSeeCheckboxIsChecked($checkbox)
@@ -719,6 +751,7 @@ class AcceptanceTester extends \Codeception\Actor
      * ```
      *
      * @param $checkbox
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCheckboxIsChecked()
      */
     public function dontSeeCheckboxIsChecked($checkbox)
@@ -746,6 +779,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $field
      * @param $value
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeInField()
      */
     public function canSeeInField($field, $value)
@@ -772,6 +806,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $field
      * @param $value
+     *
      * @see \Codeception\Lib\InnerBrowser::seeInField()
      */
     public function seeInField($field, $value)
@@ -799,6 +834,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $field
      * @param $value
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeInField()
      */
     public function cantSeeInField($field, $value)
@@ -825,6 +861,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $field
      * @param $value
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeInField()
      */
     public function dontSeeInField($field, $value)
@@ -889,6 +926,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $selector
      * @param $params
      * @param $button
+     *
      * @see \Codeception\Lib\InnerBrowser::submitForm()
      */
     public function submitForm($selector, $params, $button = null)
@@ -910,6 +948,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $field
      * @param $value
+     *
      * @see \Codeception\Lib\InnerBrowser::fillField()
      */
     public function fillField($field, $value)
@@ -940,6 +979,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $select
      * @param $option
+     *
      * @see \Codeception\Lib\InnerBrowser::selectOption()
      */
     public function selectOption($select, $option)
@@ -959,6 +999,7 @@ class AcceptanceTester extends \Codeception\Actor
      * ```
      *
      * @param $option
+     *
      * @see \Codeception\Lib\InnerBrowser::checkOption()
      */
     public function checkOption($option)
@@ -978,6 +1019,7 @@ class AcceptanceTester extends \Codeception\Actor
      * ```
      *
      * @param $option
+     *
      * @see \Codeception\Lib\InnerBrowser::uncheckOption()
      */
     public function uncheckOption($option)
@@ -999,6 +1041,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $field
      * @param $filename
+     *
      * @see \Codeception\Lib\InnerBrowser::attachFile()
      */
     public function attachFile($field, $filename)
@@ -1016,6 +1059,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $uri
      * @param $params
+     *
      * @see \Codeception\Lib\InnerBrowser::sendAjaxGetRequest()
      */
     public function sendAjaxGetRequest($uri, $params = null)
@@ -1044,6 +1088,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $uri
      * @param $params
+     *
      * @see \Codeception\Lib\InnerBrowser::sendAjaxPostRequest()
      */
     public function sendAjaxPostRequest($uri, $params = null)
@@ -1070,6 +1115,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $method
      * @param $uri
      * @param $params
+     *
      * @see \Codeception\Lib\InnerBrowser::sendAjaxRequest()
      */
     public function sendAjaxRequest($method, $uri, $params = null)
@@ -1094,6 +1140,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $cssOrXPathOrRegex
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::grabTextFrom()
      */
     public function grabTextFrom($cssOrXPathOrRegex)
@@ -1116,8 +1163,11 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $cssOrXpath
      * @param $attribute
+     *
      * @internal param $element
+     *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::grabAttributeFrom()
      */
     public function grabAttributeFrom($cssOrXpath, $attribute)
@@ -1131,6 +1181,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $field
      *
      * @return array|mixed|null|string
+     *
      * @see \Codeception\Lib\InnerBrowser::grabValueFrom()
      */
     public function grabValueFrom($field)
@@ -1153,10 +1204,12 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $name
      * @param $val
      * @param array $params
+     *
      * @internal param $cookie
      * @internal param $value
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::setCookie()
      */
     public function setCookie($name, $val, $params = null)
@@ -1171,9 +1224,10 @@ class AcceptanceTester extends \Codeception\Actor
      * You can set additional cookie params like `domain`, `path` in array passed as last argument.
      *
      * @param $cookie
-     *
      * @param array $params
+     *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::grabCookie()
      */
     public function grabCookie($name, $params = null)
@@ -1195,8 +1249,10 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $cookie
      * @param array $params
+     *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCookie()
      */
     public function canSeeCookie($name, $params = null)
@@ -1218,7 +1274,9 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $cookie
      * @param array $params
+     *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCookie()
      */
     public function seeCookie($name, $params = null)
@@ -1233,10 +1291,11 @@ class AcceptanceTester extends \Codeception\Actor
      * You can set additional cookie params like `domain`, `path` as array passed in last argument.
      *
      * @param $cookie
-     *
      * @param array $params
+     *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCookie()
      */
     public function cantSeeCookie($name, $params = null)
@@ -1251,9 +1310,10 @@ class AcceptanceTester extends \Codeception\Actor
      * You can set additional cookie params like `domain`, `path` as array passed in last argument.
      *
      * @param $cookie
-     *
      * @param array $params
+     *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCookie()
      */
     public function dontSeeCookie($name, $params = null)
@@ -1268,9 +1328,10 @@ class AcceptanceTester extends \Codeception\Actor
      * You can set additional cookie params like `domain`, `path` in array passed as last argument.
      *
      * @param $cookie
-     *
      * @param array $params
+     *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::resetCookie()
      */
     public function resetCookie($name, $params = null)
@@ -1298,8 +1359,10 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $selector
      * @param array $attributes
+     *
      * @return
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeElement()
      */
     public function canSeeElement($selector, $attributes = null)
@@ -1327,7 +1390,9 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $selector
      * @param array $attributes
+     *
      * @return
+     *
      * @see \Codeception\Lib\InnerBrowser::seeElement()
      */
     public function seeElement($selector, $attributes = null)
@@ -1352,7 +1417,8 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $selector
      * @param array $attributes
-     * Conditional Assertion: Test won't be stopped on fail
+     *                          Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeElement()
      */
     public function cantSeeElement($selector, $attributes = null)
@@ -1377,6 +1443,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $selector
      * @param array $attributes
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeElement()
      */
     public function dontSeeElement($selector, $attributes = null)
@@ -1395,11 +1462,13 @@ class AcceptanceTester extends \Codeception\Actor
      * $I->seeNumberOfElements('tr', [0,10]); //between 0 and 10 elements
      * ?>
      * ```
+     *
      * @param $selector
      * @param mixed $expected:
-     * - string: strict number
-     * - array: range of numbers [0,10]
-     * Conditional Assertion: Test won't be stopped on fail
+     *                         - string: strict number
+     *                         - array: range of numbers [0,10]
+     *                         Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeNumberOfElements()
      */
     public function canSeeNumberOfElements($selector, $expected)
@@ -1418,10 +1487,12 @@ class AcceptanceTester extends \Codeception\Actor
      * $I->seeNumberOfElements('tr', [0,10]); //between 0 and 10 elements
      * ?>
      * ```
+     *
      * @param $selector
      * @param mixed $expected:
-     * - string: strict number
-     * - array: range of numbers [0,10]
+     *                         - string: strict number
+     *                         - array: range of numbers [0,10]
+     *
      * @see \Codeception\Lib\InnerBrowser::seeNumberOfElements()
      */
     public function seeNumberOfElements($selector, $expected)
@@ -1444,7 +1515,8 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $optionText
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeOptionIsSelected()
      */
     public function canSeeOptionIsSelected($select, $optionText)
@@ -1467,6 +1539,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $optionText
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::seeOptionIsSelected()
      */
     public function seeOptionIsSelected($select, $optionText)
@@ -1489,7 +1562,8 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $optionText
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeOptionIsSelected()
      */
     public function cantSeeOptionIsSelected($select, $optionText)
@@ -1512,6 +1586,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $optionText
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeOptionIsSelected()
      */
     public function dontSeeOptionIsSelected($select, $optionText)
@@ -1524,6 +1599,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * Asserts that current page has 404 response status code.
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seePageNotFound()
      */
     public function canSeePageNotFound()
@@ -1535,6 +1611,7 @@ class AcceptanceTester extends \Codeception\Actor
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Asserts that current page has 404 response status code.
+     *
      * @see \Codeception\Lib\InnerBrowser::seePageNotFound()
      */
     public function seePageNotFound()
@@ -1550,7 +1627,8 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $code
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeResponseCodeIs()
      */
     public function canSeeResponseCodeIs($code)
@@ -1566,6 +1644,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $code
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::seeResponseCodeIs()
      */
     public function seeResponseCodeIs($code)
@@ -1587,7 +1666,8 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $title
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeInTitle()
      */
     public function canSeeInTitle($title)
@@ -1609,6 +1689,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $title
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::seeInTitle()
      */
     public function seeInTitle($title)
@@ -1624,7 +1705,8 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $title
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeInTitle()
      */
     public function cantSeeInTitle($title)
@@ -1640,6 +1722,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $title
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeInTitle()
      */
     public function dontSeeInTitle($title)

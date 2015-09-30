@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 
 namespace App\Http\Requests;
 
@@ -7,7 +8,7 @@ use Dingo\Api\Http\FormRequest;
 use Dingo\Api\Http\Request;
 use Illuminate\Contracts\Validation\Validator;
 
-class ApiRequest extends FormRequest 
+class ApiRequest extends FormRequest
 {
     /**
      * Handle a failed validation attempt.

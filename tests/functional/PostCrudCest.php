@@ -7,8 +7,8 @@ class PostCrudCest
     public function __construct()
     {
         $this->postAttributes = [
-            'title' => 'Hello Universe',
-            'body' => 'You are so awesome',
+            'title'      => 'Hello Universe',
+            'body'       => 'You are so awesome',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ];

@@ -9,7 +9,7 @@
 return [
     'local' => [
         'app' => [
-        	'url' => 'http://laravelapi.local',
+            'url' => 'http://laravelapi.local',
         ],
     ],
 ];

@@ -10,6 +10,6 @@ $I->seeCurrentUrlEquals('/auth/register');
 $I->seeFormHasErrors();
 $I->seeFormErrorMessage('name', 'The name field is required.');
 $I->seeFormErrorMessages([
-    'name' => 'The name field is required.',
+    'name'  => 'The name field is required.',
     'email' => 'The email field is required.',
 ]);

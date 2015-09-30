@@ -42,7 +42,7 @@ class HelperManager
     {
         $helper = $this->formatHelperName($helper);
 
-        if (! isset($this->loadedHelpers[$helper])) {
+        if (!isset($this->loadedHelpers[$helper])) {
             $this->loadedHelpers[$helper] = new $helper($this->app);
         }
 
@@ -56,7 +56,7 @@ class HelperManager
     {
         $namespace = $this->app->getNamespace();
 
-        if (! Str::contains($helper, $namespace)) {
+        if (!Str::contains($helper, $namespace)) {
             $helper = $namespace.'Helpers\\'.$helper;
         }
 

@@ -10,6 +10,7 @@ use Codeception\Module\Asserts;
 
 /**
  * Inherited Methods.
+ *
  * @method void wantToTest($text)
  * @method void wantTo($text)
  * @method void execute($callable)
@@ -31,6 +32,7 @@ class ApiTester extends \Codeception\Actor
      * Provides access the Laravel application object.
      *
      * @return \Illuminate\Foundation\Application
+     *
      * @see \Codeception\Module\Laravel5::getApplication()
      */
     public function getApplication()
@@ -51,6 +53,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $route
      * @param array $params
+     *
      * @see \Codeception\Module\Laravel5::amOnRoute()
      */
     public function amOnRoute($route, $params = null)
@@ -71,6 +74,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $action
      * @param array $params
+     *
      * @see \Codeception\Module\Laravel5::amOnAction()
      */
     public function amOnAction($action, $params = null)
@@ -88,9 +92,11 @@ class ApiTester extends \Codeception\Actor
      * $I->seeCurrentRouteIs('posts.index');
      * ?>
      * ```
+     *
      * @param $route
      * @param array $params
-     * Conditional Assertion: Test won't be stopped on fail
+     *                      Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::seeCurrentRouteIs()
      */
     public function canSeeCurrentRouteIs($route, $params = null)
@@ -108,8 +114,10 @@ class ApiTester extends \Codeception\Actor
      * $I->seeCurrentRouteIs('posts.index');
      * ?>
      * ```
+     *
      * @param $route
      * @param array $params
+     *
      * @see \Codeception\Module\Laravel5::seeCurrentRouteIs()
      */
     public function seeCurrentRouteIs($route, $params = null)
@@ -130,7 +138,8 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $action
      * @param array $params
-     * Conditional Assertion: Test won't be stopped on fail
+     *                      Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::seeCurrentActionIs()
      */
     public function canSeeCurrentActionIs($action, $params = null)
@@ -151,6 +160,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $action
      * @param array $params
+     *
      * @see \Codeception\Module\Laravel5::seeCurrentActionIs()
      */
     public function seeCurrentActionIs($action, $params = null)
@@ -163,10 +173,12 @@ class ApiTester extends \Codeception\Actor
      *
      * Assert that the session has a given list of values.
      *
-     * @param  string|array $key
-     * @param  mixed $value
+     * @param string|array $key
+     * @param mixed        $value
+     *
      * @return void
-     * Conditional Assertion: Test won't be stopped on fail
+     *              Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::seeInSession()
      */
     public function canSeeInSession($key, $value = null)
@@ -179,9 +191,11 @@ class ApiTester extends \Codeception\Actor
      *
      * Assert that the session has a given list of values.
      *
-     * @param  string|array $key
-     * @param  mixed $value
+     * @param string|array $key
+     * @param mixed        $value
+     *
      * @return void
+     *
      * @see \Codeception\Module\Laravel5::seeInSession()
      */
     public function seeInSession($key, $value = null)
@@ -194,9 +208,11 @@ class ApiTester extends \Codeception\Actor
      *
      * Assert that the session has a given list of values.
      *
-     * @param  array $bindings
+     * @param array $bindings
+     *
      * @return void
-     * Conditional Assertion: Test won't be stopped on fail
+     *              Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::seeSessionHasValues()
      */
     public function canSeeSessionHasValues($bindings)
@@ -209,8 +225,10 @@ class ApiTester extends \Codeception\Actor
      *
      * Assert that the session has a given list of values.
      *
-     * @param  array $bindings
+     * @param array $bindings
+     *
      * @return void
+     *
      * @see \Codeception\Module\Laravel5::seeSessionHasValues()
      */
     public function seeSessionHasValues($bindings)
@@ -224,7 +242,8 @@ class ApiTester extends \Codeception\Actor
      * Assert that the form errors are bound to the View.
      *
      * @return bool
-     * Conditional Assertion: Test won't be stopped on fail
+     *              Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::seeFormHasErrors()
      */
     public function canSeeFormHasErrors()
@@ -238,6 +257,7 @@ class ApiTester extends \Codeception\Actor
      * Assert that the form errors are bound to the View.
      *
      * @return bool
+     *
      * @see \Codeception\Module\Laravel5::seeFormHasErrors()
      */
     public function seeFormHasErrors()
@@ -261,8 +281,10 @@ class ApiTester extends \Codeception\Actor
      * $I->seeFormErrorMessages(array('username'=>'Invalid Username'));
      * ?>
      * ```
+     *
      * @param array $bindings
-     * Conditional Assertion: Test won't be stopped on fail
+     *                        Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::seeFormErrorMessages()
      */
     public function canSeeFormErrorMessages($bindings)
@@ -286,7 +308,9 @@ class ApiTester extends \Codeception\Actor
      * $I->seeFormErrorMessages(array('username'=>'Invalid Username'));
      * ?>
      * ```
+     *
      * @param array $bindings
+     *
      * @see \Codeception\Module\Laravel5::seeFormErrorMessages()
      */
     public function seeFormErrorMessages($bindings)
@@ -310,9 +334,11 @@ class ApiTester extends \Codeception\Actor
      * $I->seeFormErrorMessage('username', 'Invalid Username');
      * ?>
      * ```
+     *
      * @param string $key
      * @param string $errorMessage
-     * Conditional Assertion: Test won't be stopped on fail
+     *                             Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::seeFormErrorMessage()
      */
     public function canSeeFormErrorMessage($key, $errorMessage)
@@ -336,8 +362,10 @@ class ApiTester extends \Codeception\Actor
      * $I->seeFormErrorMessage('username', 'Invalid Username');
      * ?>
      * ```
+     *
      * @param string $key
      * @param string $errorMessage
+     *
      * @see \Codeception\Module\Laravel5::seeFormErrorMessage()
      */
     public function seeFormErrorMessage($key, $errorMessage)
@@ -352,9 +380,11 @@ class ApiTester extends \Codeception\Actor
      * Takes either an object that implements the User interface or
      * an array of credentials.
      *
-     * @param  \Illuminate\Contracts\Auth\User|array $user
-     * @param  string $driver
+     * @param \Illuminate\Contracts\Auth\User|array $user
+     * @param string                                $driver
+     *
      * @return void
+     *
      * @see \Codeception\Module\Laravel5::amLoggedAs()
      */
     public function amLoggedAs($user, $driver = null)
@@ -366,6 +396,7 @@ class ApiTester extends \Codeception\Actor
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Logs user out
+     *
      * @see \Codeception\Module\Laravel5::logout()
      */
     public function logout()
@@ -378,6 +409,7 @@ class ApiTester extends \Codeception\Actor
      *
      * Checks that user is authenticated
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::seeAuthentication()
      */
     public function canSeeAuthentication()
@@ -389,6 +421,7 @@ class ApiTester extends \Codeception\Actor
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Checks that user is authenticated
+     *
      * @see \Codeception\Module\Laravel5::seeAuthentication()
      */
     public function seeAuthentication()
@@ -401,6 +434,7 @@ class ApiTester extends \Codeception\Actor
      *
      * Check that user is not authenticated
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::dontSeeAuthentication()
      */
     public function cantSeeAuthentication()
@@ -412,6 +446,7 @@ class ApiTester extends \Codeception\Actor
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Check that user is not authenticated
+     *
      * @see \Codeception\Module\Laravel5::dontSeeAuthentication()
      */
     public function dontSeeAuthentication()
@@ -441,8 +476,10 @@ class ApiTester extends \Codeception\Actor
      * ?>
      * ```
      *
-     * @param  string $class
+     * @param string $class
+     *
      * @return mixed
+     *
      * @see \Codeception\Module\Laravel5::grabService()
      */
     public function grabService($class)
@@ -463,7 +500,9 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $model
      * @param array $attributes
+     *
      * @return mixed
+     *
      * @see \Codeception\Module\Laravel5::haveRecord()
      */
     public function haveRecord($model, $attributes = null)
@@ -482,7 +521,8 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $model
      * @param array $attributes
-     * Conditional Assertion: Test won't be stopped on fail
+     *                          Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::seeRecord()
      */
     public function canSeeRecord($model, $attributes = null)
@@ -501,6 +541,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $model
      * @param array $attributes
+     *
      * @see \Codeception\Module\Laravel5::seeRecord()
      */
     public function seeRecord($model, $attributes = null)
@@ -521,7 +562,8 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $model
      * @param array $attributes
-     * Conditional Assertion: Test won't be stopped on fail
+     *                          Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::dontSeeRecord()
      */
     public function cantSeeRecord($model, $attributes = null)
@@ -542,6 +584,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $model
      * @param array $attributes
+     *
      * @see \Codeception\Module\Laravel5::dontSeeRecord()
      */
     public function dontSeeRecord($model, $attributes = null)
@@ -562,7 +605,9 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $model
      * @param array $attributes
+     *
      * @return mixed
+     *
      * @see \Codeception\Module\Laravel5::grabRecord()
      */
     public function grabRecord($model, $attributes = null)
@@ -577,6 +622,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $username
      * @param $password
+     *
      * @see \Codeception\Module\REST::amHttpAuthenticated()
      */
     public function amHttpAuthenticated($username, $password)
@@ -599,6 +645,7 @@ class ApiTester extends \Codeception\Actor
      * ```
      *
      * @param $page
+     *
      * @see \Codeception\Lib\InnerBrowser::amOnPage()
      */
     public function amOnPage($page)
@@ -638,6 +685,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $link
      * @param $context
+     *
      * @see \Codeception\Lib\InnerBrowser::click()
      */
     public function click($link, $context = null)
@@ -661,7 +709,8 @@ class ApiTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $selector
-     * Conditional Assertion: Test won't be stopped on fail
+     *                       Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::see()
      */
     public function canSee($text, $selector = null)
@@ -685,6 +734,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $selector
+     *
      * @see \Codeception\Lib\InnerBrowser::see()
      */
     public function see($text, $selector = null)
@@ -708,7 +758,8 @@ class ApiTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $selector
-     * Conditional Assertion: Test won't be stopped on fail
+     *                       Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSee()
      */
     public function cantSee($text, $selector = null)
@@ -732,6 +783,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $selector
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSee()
      */
     public function dontSee($text, $selector = null)
@@ -754,7 +806,8 @@ class ApiTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $url
-     * Conditional Assertion: Test won't be stopped on fail
+     *                   Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeLink()
      */
     public function canSeeLink($text, $url = null)
@@ -777,6 +830,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $url
+     *
      * @see \Codeception\Lib\InnerBrowser::seeLink()
      */
     public function seeLink($text, $url = null)
@@ -799,7 +853,8 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $text
      * @param null $url
-     * Conditional Assertion: Test won't be stopped on fail
+     *                  Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeLink()
      */
     public function cantSeeLink($text, $url = null)
@@ -822,6 +877,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $text
      * @param null $url
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeLink()
      */
     public function dontSeeLink($text, $url = null)
@@ -845,6 +901,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $uri
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeInCurrentUrl()
      */
     public function canSeeInCurrentUrl($uri)
@@ -867,6 +924,7 @@ class ApiTester extends \Codeception\Actor
      * ```
      *
      * @param $uri
+     *
      * @see \Codeception\Lib\InnerBrowser::seeInCurrentUrl()
      */
     public function seeInCurrentUrl($uri)
@@ -887,6 +945,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $uri
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeInCurrentUrl()
      */
     public function cantSeeInCurrentUrl($uri)
@@ -906,6 +965,7 @@ class ApiTester extends \Codeception\Actor
      * ```
      *
      * @param $uri
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeInCurrentUrl()
      */
     public function dontSeeInCurrentUrl($uri)
@@ -928,6 +988,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $uri
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCurrentUrlEquals()
      */
     public function canSeeCurrentUrlEquals($uri)
@@ -949,6 +1010,7 @@ class ApiTester extends \Codeception\Actor
      * ```
      *
      * @param $uri
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCurrentUrlEquals()
      */
     public function seeCurrentUrlEquals($uri)
@@ -971,6 +1033,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $uri
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCurrentUrlEquals()
      */
     public function cantSeeCurrentUrlEquals($uri)
@@ -992,6 +1055,7 @@ class ApiTester extends \Codeception\Actor
      * ```
      *
      * @param $uri
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCurrentUrlEquals()
      */
     public function dontSeeCurrentUrlEquals($uri)
@@ -1013,6 +1077,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $uri
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCurrentUrlMatches()
      */
     public function canSeeCurrentUrlMatches($uri)
@@ -1033,6 +1098,7 @@ class ApiTester extends \Codeception\Actor
      * ```
      *
      * @param $uri
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCurrentUrlMatches()
      */
     public function seeCurrentUrlMatches($uri)
@@ -1054,6 +1120,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $uri
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCurrentUrlMatches()
      */
     public function cantSeeCurrentUrlMatches($uri)
@@ -1074,6 +1141,7 @@ class ApiTester extends \Codeception\Actor
      * ```
      *
      * @param $uri
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCurrentUrlMatches()
      */
     public function dontSeeCurrentUrlMatches($uri)
@@ -1097,7 +1165,9 @@ class ApiTester extends \Codeception\Actor
      * @param null $uri
      *
      * @internal param $url
+     *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::grabFromCurrentUrl()
      */
     public function grabFromCurrentUrl($uri = null)
@@ -1120,6 +1190,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $checkbox
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCheckboxIsChecked()
      */
     public function canSeeCheckboxIsChecked($checkbox)
@@ -1141,6 +1212,7 @@ class ApiTester extends \Codeception\Actor
      * ```
      *
      * @param $checkbox
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCheckboxIsChecked()
      */
     public function seeCheckboxIsChecked($checkbox)
@@ -1162,6 +1234,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $checkbox
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCheckboxIsChecked()
      */
     public function cantSeeCheckboxIsChecked($checkbox)
@@ -1182,6 +1255,7 @@ class ApiTester extends \Codeception\Actor
      * ```
      *
      * @param $checkbox
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCheckboxIsChecked()
      */
     public function dontSeeCheckboxIsChecked($checkbox)
@@ -1209,6 +1283,7 @@ class ApiTester extends \Codeception\Actor
      * @param $field
      * @param $value
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeInField()
      */
     public function canSeeInField($field, $value)
@@ -1235,6 +1310,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $field
      * @param $value
+     *
      * @see \Codeception\Lib\InnerBrowser::seeInField()
      */
     public function seeInField($field, $value)
@@ -1262,6 +1338,7 @@ class ApiTester extends \Codeception\Actor
      * @param $field
      * @param $value
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeInField()
      */
     public function cantSeeInField($field, $value)
@@ -1288,6 +1365,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $field
      * @param $value
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeInField()
      */
     public function dontSeeInField($field, $value)
@@ -1352,6 +1430,7 @@ class ApiTester extends \Codeception\Actor
      * @param $selector
      * @param $params
      * @param $button
+     *
      * @see \Codeception\Lib\InnerBrowser::submitForm()
      */
     public function submitForm($selector, $params, $button = null)
@@ -1373,6 +1452,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $field
      * @param $value
+     *
      * @see \Codeception\Lib\InnerBrowser::fillField()
      */
     public function fillField($field, $value)
@@ -1403,6 +1483,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $select
      * @param $option
+     *
      * @see \Codeception\Lib\InnerBrowser::selectOption()
      */
     public function selectOption($select, $option)
@@ -1422,6 +1503,7 @@ class ApiTester extends \Codeception\Actor
      * ```
      *
      * @param $option
+     *
      * @see \Codeception\Lib\InnerBrowser::checkOption()
      */
     public function checkOption($option)
@@ -1441,6 +1523,7 @@ class ApiTester extends \Codeception\Actor
      * ```
      *
      * @param $option
+     *
      * @see \Codeception\Lib\InnerBrowser::uncheckOption()
      */
     public function uncheckOption($option)
@@ -1462,6 +1545,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $field
      * @param $filename
+     *
      * @see \Codeception\Lib\InnerBrowser::attachFile()
      */
     public function attachFile($field, $filename)
@@ -1479,6 +1563,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $uri
      * @param $params
+     *
      * @see \Codeception\Lib\InnerBrowser::sendAjaxGetRequest()
      */
     public function sendAjaxGetRequest($uri, $params = null)
@@ -1507,6 +1592,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $uri
      * @param $params
+     *
      * @see \Codeception\Lib\InnerBrowser::sendAjaxPostRequest()
      */
     public function sendAjaxPostRequest($uri, $params = null)
@@ -1533,6 +1619,7 @@ class ApiTester extends \Codeception\Actor
      * @param $method
      * @param $uri
      * @param $params
+     *
      * @see \Codeception\Lib\InnerBrowser::sendAjaxRequest()
      */
     public function sendAjaxRequest($method, $uri, $params = null)
@@ -1557,6 +1644,7 @@ class ApiTester extends \Codeception\Actor
      * @param $cssOrXPathOrRegex
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::grabTextFrom()
      */
     public function grabTextFrom($cssOrXPathOrRegex)
@@ -1579,8 +1667,11 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $cssOrXpath
      * @param $attribute
+     *
      * @internal param $element
+     *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::grabAttributeFrom()
      */
     public function grabAttributeFrom($cssOrXpath, $attribute)
@@ -1594,6 +1685,7 @@ class ApiTester extends \Codeception\Actor
      * @param $field
      *
      * @return array|mixed|null|string
+     *
      * @see \Codeception\Lib\InnerBrowser::grabValueFrom()
      */
     public function grabValueFrom($field)
@@ -1616,10 +1708,12 @@ class ApiTester extends \Codeception\Actor
      * @param $name
      * @param $val
      * @param array $params
+     *
      * @internal param $cookie
      * @internal param $value
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::setCookie()
      */
     public function setCookie($name, $val, $params = null)
@@ -1634,9 +1728,10 @@ class ApiTester extends \Codeception\Actor
      * You can set additional cookie params like `domain`, `path` in array passed as last argument.
      *
      * @param $cookie
-     *
      * @param array $params
+     *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::grabCookie()
      */
     public function grabCookie($name, $params = null)
@@ -1658,8 +1753,10 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $cookie
      * @param array $params
+     *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCookie()
      */
     public function canSeeCookie($name, $params = null)
@@ -1681,7 +1778,9 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $cookie
      * @param array $params
+     *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCookie()
      */
     public function seeCookie($name, $params = null)
@@ -1696,10 +1795,11 @@ class ApiTester extends \Codeception\Actor
      * You can set additional cookie params like `domain`, `path` as array passed in last argument.
      *
      * @param $cookie
-     *
      * @param array $params
+     *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCookie()
      */
     public function cantSeeCookie($name, $params = null)
@@ -1714,9 +1814,10 @@ class ApiTester extends \Codeception\Actor
      * You can set additional cookie params like `domain`, `path` as array passed in last argument.
      *
      * @param $cookie
-     *
      * @param array $params
+     *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCookie()
      */
     public function dontSeeCookie($name, $params = null)
@@ -1731,9 +1832,10 @@ class ApiTester extends \Codeception\Actor
      * You can set additional cookie params like `domain`, `path` in array passed as last argument.
      *
      * @param $cookie
-     *
      * @param array $params
+     *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::resetCookie()
      */
     public function resetCookie($name, $params = null)
@@ -1761,8 +1863,10 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $selector
      * @param array $attributes
+     *
      * @return
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeElement()
      */
     public function canSeeElement($selector, $attributes = null)
@@ -1790,7 +1894,9 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $selector
      * @param array $attributes
+     *
      * @return
+     *
      * @see \Codeception\Lib\InnerBrowser::seeElement()
      */
     public function seeElement($selector, $attributes = null)
@@ -1815,7 +1921,8 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $selector
      * @param array $attributes
-     * Conditional Assertion: Test won't be stopped on fail
+     *                          Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeElement()
      */
     public function cantSeeElement($selector, $attributes = null)
@@ -1840,6 +1947,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $selector
      * @param array $attributes
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeElement()
      */
     public function dontSeeElement($selector, $attributes = null)
@@ -1858,11 +1966,13 @@ class ApiTester extends \Codeception\Actor
      * $I->seeNumberOfElements('tr', [0,10]); //between 0 and 10 elements
      * ?>
      * ```
+     *
      * @param $selector
      * @param mixed $expected:
-     * - string: strict number
-     * - array: range of numbers [0,10]
-     * Conditional Assertion: Test won't be stopped on fail
+     *                         - string: strict number
+     *                         - array: range of numbers [0,10]
+     *                         Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeNumberOfElements()
      */
     public function canSeeNumberOfElements($selector, $expected)
@@ -1881,10 +1991,12 @@ class ApiTester extends \Codeception\Actor
      * $I->seeNumberOfElements('tr', [0,10]); //between 0 and 10 elements
      * ?>
      * ```
+     *
      * @param $selector
      * @param mixed $expected:
-     * - string: strict number
-     * - array: range of numbers [0,10]
+     *                         - string: strict number
+     *                         - array: range of numbers [0,10]
+     *
      * @see \Codeception\Lib\InnerBrowser::seeNumberOfElements()
      */
     public function seeNumberOfElements($selector, $expected)
@@ -1907,7 +2019,8 @@ class ApiTester extends \Codeception\Actor
      * @param $optionText
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeOptionIsSelected()
      */
     public function canSeeOptionIsSelected($select, $optionText)
@@ -1930,6 +2043,7 @@ class ApiTester extends \Codeception\Actor
      * @param $optionText
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::seeOptionIsSelected()
      */
     public function seeOptionIsSelected($select, $optionText)
@@ -1952,7 +2066,8 @@ class ApiTester extends \Codeception\Actor
      * @param $optionText
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeOptionIsSelected()
      */
     public function cantSeeOptionIsSelected($select, $optionText)
@@ -1975,6 +2090,7 @@ class ApiTester extends \Codeception\Actor
      * @param $optionText
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeOptionIsSelected()
      */
     public function dontSeeOptionIsSelected($select, $optionText)
@@ -1987,6 +2103,7 @@ class ApiTester extends \Codeception\Actor
      *
      * Asserts that current page has 404 response status code.
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seePageNotFound()
      */
     public function canSeePageNotFound()
@@ -1998,6 +2115,7 @@ class ApiTester extends \Codeception\Actor
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Asserts that current page has 404 response status code.
+     *
      * @see \Codeception\Lib\InnerBrowser::seePageNotFound()
      */
     public function seePageNotFound()
@@ -2012,6 +2130,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $code
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\REST::seeResponseCodeIs()
      */
     public function canSeeResponseCodeIs($code)
@@ -2025,6 +2144,7 @@ class ApiTester extends \Codeception\Actor
      * Checks response code equals to provided value.
      *
      * @param $code
+     *
      * @see \Codeception\Module\REST::seeResponseCodeIs()
      */
     public function seeResponseCodeIs($code)
@@ -2046,7 +2166,8 @@ class ApiTester extends \Codeception\Actor
      * @param $title
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeInTitle()
      */
     public function canSeeInTitle($title)
@@ -2068,6 +2189,7 @@ class ApiTester extends \Codeception\Actor
      * @param $title
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::seeInTitle()
      */
     public function seeInTitle($title)
@@ -2083,7 +2205,8 @@ class ApiTester extends \Codeception\Actor
      * @param $title
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeInTitle()
      */
     public function cantSeeInTitle($title)
@@ -2099,6 +2222,7 @@ class ApiTester extends \Codeception\Actor
      * @param $title
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeInTitle()
      */
     public function dontSeeInTitle($title)
@@ -2113,6 +2237,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $name
      * @param $value
+     *
      * @see \Codeception\Module\REST::haveHttpHeader()
      */
     public function haveHttpHeader($name, $value)
@@ -2129,6 +2254,7 @@ class ApiTester extends \Codeception\Actor
      * @param $name
      * @param $value
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\REST::seeHttpHeader()
      */
     public function canSeeHttpHeader($name, $value = null)
@@ -2144,6 +2270,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $name
      * @param $value
+     *
      * @see \Codeception\Module\REST::seeHttpHeader()
      */
     public function seeHttpHeader($name, $value = null)
@@ -2160,6 +2287,7 @@ class ApiTester extends \Codeception\Actor
      * @param $name
      * @param $value
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\REST::dontSeeHttpHeader()
      */
     public function cantSeeHttpHeader($name, $value = null)
@@ -2175,6 +2303,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $name
      * @param $value
+     *
      * @see \Codeception\Module\REST::dontSeeHttpHeader()
      */
     public function dontSeeHttpHeader($name, $value = null)
@@ -2197,6 +2326,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $name
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\REST::seeHttpHeaderOnce()
      */
     public function canSeeHttpHeaderOnce($name)
@@ -2218,6 +2348,7 @@ class ApiTester extends \Codeception\Actor
      * ```
      *
      * @param $name
+     *
      * @see \Codeception\Module\REST::seeHttpHeaderOnce()
      */
     public function seeHttpHeaderOnce($name)
@@ -2231,9 +2362,10 @@ class ApiTester extends \Codeception\Actor
      * Returns the value of the specified header name
      *
      * @param $name
-     * @param bool $first  Whether to return the first value or all header values
+     * @param bool $first Whether to return the first value or all header values
      *
      * @return string|array The first header value if $first is true, an array of values otherwise
+     *
      * @see \Codeception\Module\REST::grabHttpHeader()
      */
     public function grabHttpHeader($name, $first = null)
@@ -2248,6 +2380,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $username
      * @param $password
+     *
      * @see \Codeception\Module\REST::amDigestAuthenticated()
      */
     public function amDigestAuthenticated($username, $password)
@@ -2261,6 +2394,7 @@ class ApiTester extends \Codeception\Actor
      * Adds Bearer authentication via access token.
      *
      * @param $accessToken
+     *
      * @see \Codeception\Module\REST::amBearerAuthenticated()
      */
     public function amBearerAuthenticated($accessToken)
@@ -2277,7 +2411,8 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $url
      * @param array|\JsonSerializable $params
-     * @param array $files
+     * @param array                   $files
+     *
      * @see \Codeception\Module\REST::sendPOST()
      */
     public function sendPOST($url, $params = null, $files = null)
@@ -2292,6 +2427,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $url
      * @param array $params
+     *
      * @see \Codeception\Module\REST::sendHEAD()
      */
     public function sendHEAD($url, $params = null)
@@ -2306,6 +2442,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $url
      * @param array $params
+     *
      * @see \Codeception\Module\REST::sendOPTIONS()
      */
     public function sendOPTIONS($url, $params = null)
@@ -2320,6 +2457,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $url
      * @param array $params
+     *
      * @see \Codeception\Module\REST::sendGET()
      */
     public function sendGET($url, $params = null)
@@ -2335,6 +2473,7 @@ class ApiTester extends \Codeception\Actor
      * @param $url
      * @param array $params
      * @param array $files
+     *
      * @see \Codeception\Module\REST::sendPUT()
      */
     public function sendPUT($url, $params = null, $files = null)
@@ -2350,6 +2489,7 @@ class ApiTester extends \Codeception\Actor
      * @param       $url
      * @param array $params
      * @param array $files
+     *
      * @see \Codeception\Module\REST::sendPATCH()
      */
     public function sendPATCH($url, $params = null, $files = null)
@@ -2365,6 +2505,7 @@ class ApiTester extends \Codeception\Actor
      * @param $url
      * @param array $params
      * @param array $files
+     *
      * @see \Codeception\Module\REST::sendDELETE()
      */
     public function sendDELETE($url, $params = null, $files = null)
@@ -2383,6 +2524,7 @@ class ApiTester extends \Codeception\Actor
      * @link http://tools.ietf.org/html/rfc2068#section-19.6.2.4
      *
      * @author samva.ua@gmail.com
+     *
      * @see \Codeception\Module\REST::sendLINK()
      */
     public function sendLINK($url, $linkEntries)
@@ -2397,8 +2539,11 @@ class ApiTester extends \Codeception\Actor
      *
      * @param       $url
      * @param array $linkEntries (entry is array with keys "uri" and "link-param")
+     *
      * @link http://tools.ietf.org/html/rfc2068#section-19.6.2.4
+     *
      * @author samva.ua@gmail.com
+     *
      * @see \Codeception\Module\REST::sendUNLINK()
      */
     public function sendUNLINK($url, $linkEntries)
@@ -2413,6 +2558,7 @@ class ApiTester extends \Codeception\Actor
      * This is done with json_last_error function.
      *
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\REST::seeResponseIsJson()
      */
     public function canSeeResponseIsJson()
@@ -2440,6 +2586,7 @@ class ApiTester extends \Codeception\Actor
      * This is done with libxml_get_last_error function.
      *
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\REST::seeResponseIsXml()
      */
     public function canSeeResponseIsXml()
@@ -2467,6 +2614,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $text
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\REST::seeResponseContains()
      */
     public function canSeeResponseContains($text)
@@ -2480,6 +2628,7 @@ class ApiTester extends \Codeception\Actor
      * Checks whether the last response contains text.
      *
      * @param $text
+     *
      * @see \Codeception\Module\REST::seeResponseContains()
      */
     public function seeResponseContains($text)
@@ -2494,6 +2643,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $text
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\REST::dontSeeResponseContains()
      */
     public function cantSeeResponseContains($text)
@@ -2507,6 +2657,7 @@ class ApiTester extends \Codeception\Actor
      * Checks whether last response do not contain text.
      *
      * @param $text
+     *
      * @see \Codeception\Module\REST::dontSeeResponseContains()
      */
     public function dontSeeResponseContains($text)
@@ -2538,7 +2689,8 @@ class ApiTester extends \Codeception\Actor
      * This method recursively checks if one array can be found inside of another.
      *
      * @param array $json
-     * Conditional Assertion: Test won't be stopped on fail
+     *                    Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\REST::seeResponseContainsJson()
      */
     public function canSeeResponseContainsJson($json = null)
@@ -2570,6 +2722,7 @@ class ApiTester extends \Codeception\Actor
      * This method recursively checks if one array can be found inside of another.
      *
      * @param array $json
+     *
      * @see \Codeception\Module\REST::seeResponseContainsJson()
      */
     public function seeResponseContainsJson($json = null)
@@ -2592,7 +2745,9 @@ class ApiTester extends \Codeception\Actor
      * ```
      *
      * @version 1.1
+     *
      * @return string
+     *
      * @see \Codeception\Module\REST::grabResponse()
      */
     public function grabResponse()
@@ -2618,8 +2773,11 @@ class ApiTester extends \Codeception\Actor
      * ```
      *
      * @deprecated please use `grabDataFromResponseByJsonPath`
+     *
      * @param string $path
+     *
      * @return string
+     *
      * @see \Codeception\Module\REST::grabDataFromJsonResponse()
      */
     public function grabDataFromJsonResponse($path = null)
@@ -2647,9 +2805,13 @@ class ApiTester extends \Codeception\Actor
      * ```
      *
      * @param $jsonPath
-     * @return array
-     * @version 2.0.9
+     *
      * @throws \Exception
+     *
+     * @return array
+     *
+     * @version 2.0.9
+     *
      * @see \Codeception\Module\REST::grabDataFromResponseByJsonPath()
      */
     public function grabDataFromResponseByJsonPath($jsonPath)
@@ -2699,6 +2861,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @version 2.0.9
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\REST::seeResponseJsonMatchesXpath()
      */
     public function canSeeResponseJsonMatchesXpath($xpath)
@@ -2747,6 +2910,7 @@ class ApiTester extends \Codeception\Actor
      * ```
      *
      * @version 2.0.9
+     *
      * @see \Codeception\Module\REST::seeResponseJsonMatchesXpath()
      */
     public function seeResponseJsonMatchesXpath($xpath)
@@ -2798,6 +2962,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @version 2.0.9
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\REST::seeResponseJsonMatchesJsonPath()
      */
     public function canSeeResponseJsonMatchesJsonPath($jsonPath)
@@ -2848,6 +3013,7 @@ class ApiTester extends \Codeception\Actor
      * ```
      *
      * @version 2.0.9
+     *
      * @see \Codeception\Module\REST::seeResponseJsonMatchesJsonPath()
      */
     public function seeResponseJsonMatchesJsonPath($jsonPath)
@@ -2861,7 +3027,8 @@ class ApiTester extends \Codeception\Actor
      * Opposite to seeResponseJsonMatchesJsonPath
      *
      * @param array $jsonPath
-     * Conditional Assertion: Test won't be stopped on fail
+     *                        Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\REST::dontSeeResponseJsonMatchesJsonPath()
      */
     public function cantSeeResponseJsonMatchesJsonPath($jsonPath)
@@ -2875,6 +3042,7 @@ class ApiTester extends \Codeception\Actor
      * Opposite to seeResponseJsonMatchesJsonPath
      *
      * @param array $jsonPath
+     *
      * @see \Codeception\Module\REST::dontSeeResponseJsonMatchesJsonPath()
      */
     public function dontSeeResponseJsonMatchesJsonPath($jsonPath)
@@ -2888,7 +3056,8 @@ class ApiTester extends \Codeception\Actor
      * Opposite to seeResponseContainsJson
      *
      * @param array $json
-     * Conditional Assertion: Test won't be stopped on fail
+     *                    Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\REST::dontSeeResponseContainsJson()
      */
     public function cantSeeResponseContainsJson($json = null)
@@ -2902,6 +3071,7 @@ class ApiTester extends \Codeception\Actor
      * Opposite to seeResponseContainsJson
      *
      * @param array $json
+     *
      * @see \Codeception\Module\REST::dontSeeResponseContainsJson()
      */
     public function dontSeeResponseContainsJson($json = null)
@@ -2916,6 +3086,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $response
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\REST::seeResponseEquals()
      */
     public function canSeeResponseEquals($response)
@@ -2929,6 +3100,7 @@ class ApiTester extends \Codeception\Actor
      * Checks if response is exactly the same as provided.
      *
      * @param $response
+     *
      * @see \Codeception\Module\REST::seeResponseEquals()
      */
     public function seeResponseEquals($response)
@@ -2943,6 +3115,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $code
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\REST::dontSeeResponseCodeIs()
      */
     public function cantSeeResponseCodeIs($code)
@@ -2956,6 +3129,7 @@ class ApiTester extends \Codeception\Actor
      * Checks that response code is not equal to provided value.
      *
      * @param $code
+     *
      * @see \Codeception\Module\REST::dontSeeResponseCodeIs()
      */
     public function dontSeeResponseCodeIs($code)
@@ -2973,6 +3147,7 @@ class ApiTester extends \Codeception\Actor
      * @param string $message
      *
      * @return mixed
+     *
      * @see \Codeception\Module\Asserts::assertEquals()
      */
     public function assertEquals($expected, $actual, $message = null)
@@ -2988,6 +3163,7 @@ class ApiTester extends \Codeception\Actor
      * @param        $expected
      * @param        $actual
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertNotEquals()
      */
     public function assertNotEquals($expected, $actual, $message = null)
@@ -3003,6 +3179,7 @@ class ApiTester extends \Codeception\Actor
      * @param        $expected
      * @param        $actual
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertGreaterThan()
      */
     public function assertGreaterThan($expected, $actual, $message = null)
@@ -3029,6 +3206,7 @@ class ApiTester extends \Codeception\Actor
      * @param        $expected
      * @param        $actual
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertGreaterThanOrEqual()
      */
     public function assertGreaterThanOrEqual($expected, $actual, $message = null)
@@ -3055,6 +3233,7 @@ class ApiTester extends \Codeception\Actor
      * @param        $expected
      * @param        $actual
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertLessThan()
      */
     public function assertLessThan($expected, $actual, $message = null)
@@ -3070,6 +3249,7 @@ class ApiTester extends \Codeception\Actor
      * @param        $expected
      * @param        $actual
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertLessThanOrEqual()
      */
     public function assertLessThanOrEqual($expected, $actual, $message = null)
@@ -3085,6 +3265,7 @@ class ApiTester extends \Codeception\Actor
      * @param        $needle
      * @param        $haystack
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertContains()
      */
     public function assertContains($needle, $haystack, $message = null)
@@ -3100,6 +3281,7 @@ class ApiTester extends \Codeception\Actor
      * @param        $needle
      * @param        $haystack
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertNotContains()
      */
     public function assertNotContains($needle, $haystack, $message = null)
@@ -3114,6 +3296,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param        $actual
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertEmpty()
      */
     public function assertEmpty($actual, $message = null)
@@ -3128,6 +3311,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param        $actual
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertNotEmpty()
      */
     public function assertNotEmpty($actual, $message = null)
@@ -3142,6 +3326,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param        $actual
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertNull()
      */
     public function assertNull($actual, $message = null)
@@ -3156,6 +3341,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param        $actual
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertNotNull()
      */
     public function assertNotNull($actual, $message = null)
@@ -3170,6 +3356,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param        $condition
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertTrue()
      */
     public function assertTrue($condition, $message = null)
@@ -3184,6 +3371,7 @@ class ApiTester extends \Codeception\Actor
      *
      * @param        $condition
      * @param string $message
+     *
      * @see \Codeception\Module\Asserts::assertFalse()
      */
     public function assertFalse($condition, $message = null)
@@ -3197,6 +3385,7 @@ class ApiTester extends \Codeception\Actor
      * Fails the test with message.
      *
      * @param $message
+     *
      * @see \Codeception\Module\Asserts::fail()
      */
     public function fail($message)
