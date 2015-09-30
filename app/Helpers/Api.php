@@ -53,7 +53,7 @@ class Api extends Http
     {
         $statusTexts = Response::$statusTexts;
 
-        $message = (isset($statusTexts[$code]) && !$message) ? $statusTexts[$code] : $message;
+        $message = (isset($statusTexts[$code]) && ! $message) ? $statusTexts[$code] : $message;
 
         return [
             'code'    => $code,
@@ -97,7 +97,7 @@ class Api extends Http
      */
     public function hasErrors()
     {
-        return (!empty(static::$errors));
+        return (! empty(static::$errors));
     }
 
     /**
@@ -129,7 +129,7 @@ class Api extends Http
 
     public function validator($error, $response = true)
     {
-        if (!is_array($error)) {
+        if (! is_array($error)) {
             try {
                 $error = $error->errors()->all();
             } catch (\Exception $e) {
