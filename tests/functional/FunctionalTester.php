@@ -8,6 +8,7 @@
 
 /**
  * Inherited Methods.
+ *
  * @method void wantToTest($text)
  * @method void wantTo($text)
  * @method void execute($callable)
@@ -29,6 +30,7 @@ class FunctionalTester extends \Codeception\Actor
      * Provides access the Laravel application object.
      *
      * @return \Illuminate\Foundation\Application
+     *
      * @see \Codeception\Module\Laravel5::getApplication()
      */
     public function getApplication()
@@ -49,6 +51,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $route
      * @param array $params
+     *
      * @see \Codeception\Module\Laravel5::amOnRoute()
      */
     public function amOnRoute($route, $params = null)
@@ -69,6 +72,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $action
      * @param array $params
+     *
      * @see \Codeception\Module\Laravel5::amOnAction()
      */
     public function amOnAction($action, $params = null)
@@ -86,9 +90,11 @@ class FunctionalTester extends \Codeception\Actor
      * $I->seeCurrentRouteIs('posts.index');
      * ?>
      * ```
+     *
      * @param $route
      * @param array $params
-     * Conditional Assertion: Test won't be stopped on fail
+     *                      Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::seeCurrentRouteIs()
      */
     public function canSeeCurrentRouteIs($route, $params = null)
@@ -106,8 +112,10 @@ class FunctionalTester extends \Codeception\Actor
      * $I->seeCurrentRouteIs('posts.index');
      * ?>
      * ```
+     *
      * @param $route
      * @param array $params
+     *
      * @see \Codeception\Module\Laravel5::seeCurrentRouteIs()
      */
     public function seeCurrentRouteIs($route, $params = null)
@@ -128,7 +136,8 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $action
      * @param array $params
-     * Conditional Assertion: Test won't be stopped on fail
+     *                      Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::seeCurrentActionIs()
      */
     public function canSeeCurrentActionIs($action, $params = null)
@@ -149,6 +158,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $action
      * @param array $params
+     *
      * @see \Codeception\Module\Laravel5::seeCurrentActionIs()
      */
     public function seeCurrentActionIs($action, $params = null)
@@ -161,10 +171,12 @@ class FunctionalTester extends \Codeception\Actor
      *
      * Assert that the session has a given list of values.
      *
-     * @param  string|array $key
-     * @param  mixed $value
+     * @param string|array $key
+     * @param mixed        $value
+     *
      * @return void
-     * Conditional Assertion: Test won't be stopped on fail
+     *              Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::seeInSession()
      */
     public function canSeeInSession($key, $value = null)
@@ -177,9 +189,11 @@ class FunctionalTester extends \Codeception\Actor
      *
      * Assert that the session has a given list of values.
      *
-     * @param  string|array $key
-     * @param  mixed $value
+     * @param string|array $key
+     * @param mixed        $value
+     *
      * @return void
+     *
      * @see \Codeception\Module\Laravel5::seeInSession()
      */
     public function seeInSession($key, $value = null)
@@ -192,9 +206,11 @@ class FunctionalTester extends \Codeception\Actor
      *
      * Assert that the session has a given list of values.
      *
-     * @param  array $bindings
+     * @param array $bindings
+     *
      * @return void
-     * Conditional Assertion: Test won't be stopped on fail
+     *              Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::seeSessionHasValues()
      */
     public function canSeeSessionHasValues($bindings)
@@ -207,8 +223,10 @@ class FunctionalTester extends \Codeception\Actor
      *
      * Assert that the session has a given list of values.
      *
-     * @param  array $bindings
+     * @param array $bindings
+     *
      * @return void
+     *
      * @see \Codeception\Module\Laravel5::seeSessionHasValues()
      */
     public function seeSessionHasValues($bindings)
@@ -222,7 +240,8 @@ class FunctionalTester extends \Codeception\Actor
      * Assert that the form errors are bound to the View.
      *
      * @return bool
-     * Conditional Assertion: Test won't be stopped on fail
+     *              Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::seeFormHasErrors()
      */
     public function canSeeFormHasErrors()
@@ -236,6 +255,7 @@ class FunctionalTester extends \Codeception\Actor
      * Assert that the form errors are bound to the View.
      *
      * @return bool
+     *
      * @see \Codeception\Module\Laravel5::seeFormHasErrors()
      */
     public function seeFormHasErrors()
@@ -259,8 +279,10 @@ class FunctionalTester extends \Codeception\Actor
      * $I->seeFormErrorMessages(array('username'=>'Invalid Username'));
      * ?>
      * ```
+     *
      * @param array $bindings
-     * Conditional Assertion: Test won't be stopped on fail
+     *                        Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::seeFormErrorMessages()
      */
     public function canSeeFormErrorMessages($bindings)
@@ -284,7 +306,9 @@ class FunctionalTester extends \Codeception\Actor
      * $I->seeFormErrorMessages(array('username'=>'Invalid Username'));
      * ?>
      * ```
+     *
      * @param array $bindings
+     *
      * @see \Codeception\Module\Laravel5::seeFormErrorMessages()
      */
     public function seeFormErrorMessages($bindings)
@@ -308,9 +332,11 @@ class FunctionalTester extends \Codeception\Actor
      * $I->seeFormErrorMessage('username', 'Invalid Username');
      * ?>
      * ```
+     *
      * @param string $key
      * @param string $errorMessage
-     * Conditional Assertion: Test won't be stopped on fail
+     *                             Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::seeFormErrorMessage()
      */
     public function canSeeFormErrorMessage($key, $errorMessage)
@@ -334,8 +360,10 @@ class FunctionalTester extends \Codeception\Actor
      * $I->seeFormErrorMessage('username', 'Invalid Username');
      * ?>
      * ```
+     *
      * @param string $key
      * @param string $errorMessage
+     *
      * @see \Codeception\Module\Laravel5::seeFormErrorMessage()
      */
     public function seeFormErrorMessage($key, $errorMessage)
@@ -350,9 +378,11 @@ class FunctionalTester extends \Codeception\Actor
      * Takes either an object that implements the User interface or
      * an array of credentials.
      *
-     * @param  \Illuminate\Contracts\Auth\User|array $user
-     * @param  string $driver
+     * @param \Illuminate\Contracts\Auth\User|array $user
+     * @param string                                $driver
+     *
      * @return void
+     *
      * @see \Codeception\Module\Laravel5::amLoggedAs()
      */
     public function amLoggedAs($user, $driver = null)
@@ -364,6 +394,7 @@ class FunctionalTester extends \Codeception\Actor
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Logs user out
+     *
      * @see \Codeception\Module\Laravel5::logout()
      */
     public function logout()
@@ -376,6 +407,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * Checks that user is authenticated
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::seeAuthentication()
      */
     public function canSeeAuthentication()
@@ -387,6 +419,7 @@ class FunctionalTester extends \Codeception\Actor
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Checks that user is authenticated
+     *
      * @see \Codeception\Module\Laravel5::seeAuthentication()
      */
     public function seeAuthentication()
@@ -399,6 +432,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * Check that user is not authenticated
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::dontSeeAuthentication()
      */
     public function cantSeeAuthentication()
@@ -410,6 +444,7 @@ class FunctionalTester extends \Codeception\Actor
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Check that user is not authenticated
+     *
      * @see \Codeception\Module\Laravel5::dontSeeAuthentication()
      */
     public function dontSeeAuthentication()
@@ -439,8 +474,10 @@ class FunctionalTester extends \Codeception\Actor
      * ?>
      * ```
      *
-     * @param  string $class
+     * @param string $class
+     *
      * @return mixed
+     *
      * @see \Codeception\Module\Laravel5::grabService()
      */
     public function grabService($class)
@@ -461,7 +498,9 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $model
      * @param array $attributes
+     *
      * @return mixed
+     *
      * @see \Codeception\Module\Laravel5::haveRecord()
      */
     public function haveRecord($model, $attributes = null)
@@ -480,7 +519,8 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $model
      * @param array $attributes
-     * Conditional Assertion: Test won't be stopped on fail
+     *                          Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::seeRecord()
      */
     public function canSeeRecord($model, $attributes = null)
@@ -499,6 +539,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $model
      * @param array $attributes
+     *
      * @see \Codeception\Module\Laravel5::seeRecord()
      */
     public function seeRecord($model, $attributes = null)
@@ -519,7 +560,8 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $model
      * @param array $attributes
-     * Conditional Assertion: Test won't be stopped on fail
+     *                          Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Laravel5::dontSeeRecord()
      */
     public function cantSeeRecord($model, $attributes = null)
@@ -540,6 +582,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $model
      * @param array $attributes
+     *
      * @see \Codeception\Module\Laravel5::dontSeeRecord()
      */
     public function dontSeeRecord($model, $attributes = null)
@@ -560,7 +603,9 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $model
      * @param array $attributes
+     *
      * @return mixed
+     *
      * @see \Codeception\Module\Laravel5::grabRecord()
      */
     public function grabRecord($model, $attributes = null)
@@ -575,6 +620,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $username
      * @param $password
+     *
      * @see \Codeception\Lib\InnerBrowser::amHttpAuthenticated()
      */
     public function amHttpAuthenticated($username, $password)
@@ -597,6 +643,7 @@ class FunctionalTester extends \Codeception\Actor
      * ```
      *
      * @param $page
+     *
      * @see \Codeception\Lib\InnerBrowser::amOnPage()
      */
     public function amOnPage($page)
@@ -636,6 +683,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $link
      * @param $context
+     *
      * @see \Codeception\Lib\InnerBrowser::click()
      */
     public function click($link, $context = null)
@@ -659,7 +707,8 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $selector
-     * Conditional Assertion: Test won't be stopped on fail
+     *                       Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::see()
      */
     public function canSee($text, $selector = null)
@@ -683,6 +732,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $selector
+     *
      * @see \Codeception\Lib\InnerBrowser::see()
      */
     public function see($text, $selector = null)
@@ -706,7 +756,8 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $selector
-     * Conditional Assertion: Test won't be stopped on fail
+     *                       Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSee()
      */
     public function cantSee($text, $selector = null)
@@ -730,6 +781,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $selector
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSee()
      */
     public function dontSee($text, $selector = null)
@@ -752,7 +804,8 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $url
-     * Conditional Assertion: Test won't be stopped on fail
+     *                   Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeLink()
      */
     public function canSeeLink($text, $url = null)
@@ -775,6 +828,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $url
+     *
      * @see \Codeception\Lib\InnerBrowser::seeLink()
      */
     public function seeLink($text, $url = null)
@@ -797,7 +851,8 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $text
      * @param null $url
-     * Conditional Assertion: Test won't be stopped on fail
+     *                  Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeLink()
      */
     public function cantSeeLink($text, $url = null)
@@ -820,6 +875,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $text
      * @param null $url
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeLink()
      */
     public function dontSeeLink($text, $url = null)
@@ -843,6 +899,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $uri
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeInCurrentUrl()
      */
     public function canSeeInCurrentUrl($uri)
@@ -865,6 +922,7 @@ class FunctionalTester extends \Codeception\Actor
      * ```
      *
      * @param $uri
+     *
      * @see \Codeception\Lib\InnerBrowser::seeInCurrentUrl()
      */
     public function seeInCurrentUrl($uri)
@@ -885,6 +943,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $uri
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeInCurrentUrl()
      */
     public function cantSeeInCurrentUrl($uri)
@@ -904,6 +963,7 @@ class FunctionalTester extends \Codeception\Actor
      * ```
      *
      * @param $uri
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeInCurrentUrl()
      */
     public function dontSeeInCurrentUrl($uri)
@@ -926,6 +986,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $uri
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCurrentUrlEquals()
      */
     public function canSeeCurrentUrlEquals($uri)
@@ -947,6 +1008,7 @@ class FunctionalTester extends \Codeception\Actor
      * ```
      *
      * @param $uri
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCurrentUrlEquals()
      */
     public function seeCurrentUrlEquals($uri)
@@ -969,6 +1031,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $uri
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCurrentUrlEquals()
      */
     public function cantSeeCurrentUrlEquals($uri)
@@ -990,6 +1053,7 @@ class FunctionalTester extends \Codeception\Actor
      * ```
      *
      * @param $uri
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCurrentUrlEquals()
      */
     public function dontSeeCurrentUrlEquals($uri)
@@ -1011,6 +1075,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $uri
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCurrentUrlMatches()
      */
     public function canSeeCurrentUrlMatches($uri)
@@ -1031,6 +1096,7 @@ class FunctionalTester extends \Codeception\Actor
      * ```
      *
      * @param $uri
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCurrentUrlMatches()
      */
     public function seeCurrentUrlMatches($uri)
@@ -1052,6 +1118,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $uri
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCurrentUrlMatches()
      */
     public function cantSeeCurrentUrlMatches($uri)
@@ -1072,6 +1139,7 @@ class FunctionalTester extends \Codeception\Actor
      * ```
      *
      * @param $uri
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCurrentUrlMatches()
      */
     public function dontSeeCurrentUrlMatches($uri)
@@ -1095,7 +1163,9 @@ class FunctionalTester extends \Codeception\Actor
      * @param null $uri
      *
      * @internal param $url
+     *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::grabFromCurrentUrl()
      */
     public function grabFromCurrentUrl($uri = null)
@@ -1118,6 +1188,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $checkbox
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCheckboxIsChecked()
      */
     public function canSeeCheckboxIsChecked($checkbox)
@@ -1139,6 +1210,7 @@ class FunctionalTester extends \Codeception\Actor
      * ```
      *
      * @param $checkbox
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCheckboxIsChecked()
      */
     public function seeCheckboxIsChecked($checkbox)
@@ -1160,6 +1232,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $checkbox
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCheckboxIsChecked()
      */
     public function cantSeeCheckboxIsChecked($checkbox)
@@ -1180,6 +1253,7 @@ class FunctionalTester extends \Codeception\Actor
      * ```
      *
      * @param $checkbox
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCheckboxIsChecked()
      */
     public function dontSeeCheckboxIsChecked($checkbox)
@@ -1207,6 +1281,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $field
      * @param $value
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeInField()
      */
     public function canSeeInField($field, $value)
@@ -1233,6 +1308,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $field
      * @param $value
+     *
      * @see \Codeception\Lib\InnerBrowser::seeInField()
      */
     public function seeInField($field, $value)
@@ -1260,6 +1336,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $field
      * @param $value
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeInField()
      */
     public function cantSeeInField($field, $value)
@@ -1286,6 +1363,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $field
      * @param $value
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeInField()
      */
     public function dontSeeInField($field, $value)
@@ -1350,6 +1428,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $selector
      * @param $params
      * @param $button
+     *
      * @see \Codeception\Lib\InnerBrowser::submitForm()
      */
     public function submitForm($selector, $params, $button = null)
@@ -1371,6 +1450,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $field
      * @param $value
+     *
      * @see \Codeception\Lib\InnerBrowser::fillField()
      */
     public function fillField($field, $value)
@@ -1401,6 +1481,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $select
      * @param $option
+     *
      * @see \Codeception\Lib\InnerBrowser::selectOption()
      */
     public function selectOption($select, $option)
@@ -1420,6 +1501,7 @@ class FunctionalTester extends \Codeception\Actor
      * ```
      *
      * @param $option
+     *
      * @see \Codeception\Lib\InnerBrowser::checkOption()
      */
     public function checkOption($option)
@@ -1439,6 +1521,7 @@ class FunctionalTester extends \Codeception\Actor
      * ```
      *
      * @param $option
+     *
      * @see \Codeception\Lib\InnerBrowser::uncheckOption()
      */
     public function uncheckOption($option)
@@ -1460,6 +1543,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $field
      * @param $filename
+     *
      * @see \Codeception\Lib\InnerBrowser::attachFile()
      */
     public function attachFile($field, $filename)
@@ -1477,6 +1561,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $uri
      * @param $params
+     *
      * @see \Codeception\Lib\InnerBrowser::sendAjaxGetRequest()
      */
     public function sendAjaxGetRequest($uri, $params = null)
@@ -1505,6 +1590,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $uri
      * @param $params
+     *
      * @see \Codeception\Lib\InnerBrowser::sendAjaxPostRequest()
      */
     public function sendAjaxPostRequest($uri, $params = null)
@@ -1531,6 +1617,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $method
      * @param $uri
      * @param $params
+     *
      * @see \Codeception\Lib\InnerBrowser::sendAjaxRequest()
      */
     public function sendAjaxRequest($method, $uri, $params = null)
@@ -1555,6 +1642,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $cssOrXPathOrRegex
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::grabTextFrom()
      */
     public function grabTextFrom($cssOrXPathOrRegex)
@@ -1577,8 +1665,11 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $cssOrXpath
      * @param $attribute
+     *
      * @internal param $element
+     *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::grabAttributeFrom()
      */
     public function grabAttributeFrom($cssOrXpath, $attribute)
@@ -1592,6 +1683,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $field
      *
      * @return array|mixed|null|string
+     *
      * @see \Codeception\Lib\InnerBrowser::grabValueFrom()
      */
     public function grabValueFrom($field)
@@ -1614,10 +1706,12 @@ class FunctionalTester extends \Codeception\Actor
      * @param $name
      * @param $val
      * @param array $params
+     *
      * @internal param $cookie
      * @internal param $value
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::setCookie()
      */
     public function setCookie($name, $val, $params = null)
@@ -1632,9 +1726,10 @@ class FunctionalTester extends \Codeception\Actor
      * You can set additional cookie params like `domain`, `path` in array passed as last argument.
      *
      * @param $cookie
-     *
      * @param array $params
+     *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::grabCookie()
      */
     public function grabCookie($name, $params = null)
@@ -1656,8 +1751,10 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $cookie
      * @param array $params
+     *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCookie()
      */
     public function canSeeCookie($name, $params = null)
@@ -1679,7 +1776,9 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $cookie
      * @param array $params
+     *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::seeCookie()
      */
     public function seeCookie($name, $params = null)
@@ -1694,10 +1793,11 @@ class FunctionalTester extends \Codeception\Actor
      * You can set additional cookie params like `domain`, `path` as array passed in last argument.
      *
      * @param $cookie
-     *
      * @param array $params
+     *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCookie()
      */
     public function cantSeeCookie($name, $params = null)
@@ -1712,9 +1812,10 @@ class FunctionalTester extends \Codeception\Actor
      * You can set additional cookie params like `domain`, `path` as array passed in last argument.
      *
      * @param $cookie
-     *
      * @param array $params
+     *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeCookie()
      */
     public function dontSeeCookie($name, $params = null)
@@ -1729,9 +1830,10 @@ class FunctionalTester extends \Codeception\Actor
      * You can set additional cookie params like `domain`, `path` in array passed as last argument.
      *
      * @param $cookie
-     *
      * @param array $params
+     *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::resetCookie()
      */
     public function resetCookie($name, $params = null)
@@ -1759,8 +1861,10 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $selector
      * @param array $attributes
+     *
      * @return
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeElement()
      */
     public function canSeeElement($selector, $attributes = null)
@@ -1788,7 +1892,9 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $selector
      * @param array $attributes
+     *
      * @return
+     *
      * @see \Codeception\Lib\InnerBrowser::seeElement()
      */
     public function seeElement($selector, $attributes = null)
@@ -1813,7 +1919,8 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $selector
      * @param array $attributes
-     * Conditional Assertion: Test won't be stopped on fail
+     *                          Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeElement()
      */
     public function cantSeeElement($selector, $attributes = null)
@@ -1838,6 +1945,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $selector
      * @param array $attributes
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeElement()
      */
     public function dontSeeElement($selector, $attributes = null)
@@ -1856,11 +1964,13 @@ class FunctionalTester extends \Codeception\Actor
      * $I->seeNumberOfElements('tr', [0,10]); //between 0 and 10 elements
      * ?>
      * ```
+     *
      * @param $selector
      * @param mixed $expected:
-     * - string: strict number
-     * - array: range of numbers [0,10]
-     * Conditional Assertion: Test won't be stopped on fail
+     *                         - string: strict number
+     *                         - array: range of numbers [0,10]
+     *                         Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeNumberOfElements()
      */
     public function canSeeNumberOfElements($selector, $expected)
@@ -1879,10 +1989,12 @@ class FunctionalTester extends \Codeception\Actor
      * $I->seeNumberOfElements('tr', [0,10]); //between 0 and 10 elements
      * ?>
      * ```
+     *
      * @param $selector
      * @param mixed $expected:
-     * - string: strict number
-     * - array: range of numbers [0,10]
+     *                         - string: strict number
+     *                         - array: range of numbers [0,10]
+     *
      * @see \Codeception\Lib\InnerBrowser::seeNumberOfElements()
      */
     public function seeNumberOfElements($selector, $expected)
@@ -1905,7 +2017,8 @@ class FunctionalTester extends \Codeception\Actor
      * @param $optionText
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeOptionIsSelected()
      */
     public function canSeeOptionIsSelected($select, $optionText)
@@ -1928,6 +2041,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $optionText
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::seeOptionIsSelected()
      */
     public function seeOptionIsSelected($select, $optionText)
@@ -1950,7 +2064,8 @@ class FunctionalTester extends \Codeception\Actor
      * @param $optionText
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeOptionIsSelected()
      */
     public function cantSeeOptionIsSelected($select, $optionText)
@@ -1973,6 +2088,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $optionText
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeOptionIsSelected()
      */
     public function dontSeeOptionIsSelected($select, $optionText)
@@ -1985,6 +2101,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * Asserts that current page has 404 response status code.
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seePageNotFound()
      */
     public function canSeePageNotFound()
@@ -1996,6 +2113,7 @@ class FunctionalTester extends \Codeception\Actor
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Asserts that current page has 404 response status code.
+     *
      * @see \Codeception\Lib\InnerBrowser::seePageNotFound()
      */
     public function seePageNotFound()
@@ -2011,7 +2129,8 @@ class FunctionalTester extends \Codeception\Actor
      * @param $code
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeResponseCodeIs()
      */
     public function canSeeResponseCodeIs($code)
@@ -2027,6 +2146,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $code
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::seeResponseCodeIs()
      */
     public function seeResponseCodeIs($code)
@@ -2048,7 +2168,8 @@ class FunctionalTester extends \Codeception\Actor
      * @param $title
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::seeInTitle()
      */
     public function canSeeInTitle($title)
@@ -2070,6 +2191,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $title
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::seeInTitle()
      */
     public function seeInTitle($title)
@@ -2085,7 +2207,8 @@ class FunctionalTester extends \Codeception\Actor
      * @param $title
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeInTitle()
      */
     public function cantSeeInTitle($title)
@@ -2101,6 +2224,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $title
      *
      * @return mixed
+     *
      * @see \Codeception\Lib\InnerBrowser::dontSeeInTitle()
      */
     public function dontSeeInTitle($title)

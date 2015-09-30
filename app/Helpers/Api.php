@@ -3,7 +3,6 @@
 namespace App\Helpers;
 
 use Symfony\Component\HttpFoundation\Response;
-use App\Exceptions\ApiException;
 
 class Api extends Http
 {
@@ -17,9 +16,9 @@ class Api extends Http
     /**
      * Respone json errors payload.
      * 
-     * @param int $code
+     * @param int    $code
      * @param string $message
-     * @param int $status
+     * @param int    $status
      * 
      * @return \Response
      */
@@ -31,9 +30,9 @@ class Api extends Http
     /**
      * Respone json errors payload.
      * 
-     * @param array $errors
+     * @param array  $errors
      * @param string $message
-     * @param int $status
+     * @param int    $status
      * 
      * @return \Response
      */
@@ -45,7 +44,7 @@ class Api extends Http
     /**
      * Get error message based on http error codes and custom error codes.
      * 
-     * @param int $code
+     * @param int    $code
      * @param string $message
      * 
      * @return array
@@ -54,10 +53,10 @@ class Api extends Http
     {
         $statusTexts = Response::$statusTexts;
 
-        $message = (isset($statusTexts[$code]) && ! $message) ? $statusTexts[$code] : $message;
+        $message = (isset($statusTexts[$code]) && !$message) ? $statusTexts[$code] : $message;
 
         return [
-            'code' => $code,
+            'code'    => $code,
             'message' => $message,
         ];
     }
@@ -65,7 +64,7 @@ class Api extends Http
     /**
      * Set error code and message.
      * 
-     * @param int $code
+     * @param int    $code
      * @param string $message
      * 
      * @return App\Helpers\Api
@@ -98,7 +97,7 @@ class Api extends Http
      */
     public function hasErrors()
     {
-        return (! empty(static::$errors));
+        return (!empty(static::$errors));
     }
 
     /**
@@ -130,7 +129,7 @@ class Api extends Http
 
     public function validator($error, $response = true)
     {
-        if (! is_array($error)) {
+        if (!is_array($error)) {
             try {
                 $error = $error->errors()->all();
             } catch (\Exception $e) {

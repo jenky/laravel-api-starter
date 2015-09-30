@@ -10,6 +10,7 @@ use Codeception\Module\Filesystem;
 
 /**
  * Inherited Methods.
+ *
  * @method void wantToTest($text)
  * @method void wantTo($text)
  * @method void execute($callable)
@@ -32,6 +33,7 @@ class CliTester extends \Codeception\Actor
      * Project root directory is used by default
      *
      * @param $path
+     *
      * @see \Codeception\Module\Filesystem::amInPath()
      */
     public function amInPath($path)
@@ -54,6 +56,7 @@ class CliTester extends \Codeception\Actor
      * ```
      *
      * @param $filename
+     *
      * @see \Codeception\Module\Filesystem::openFile()
      */
     public function openFile($filename)
@@ -73,6 +76,7 @@ class CliTester extends \Codeception\Actor
      * ```
      *
      * @param $filename
+     *
      * @see \Codeception\Module\Filesystem::deleteFile()
      */
     public function deleteFile($filename)
@@ -92,6 +96,7 @@ class CliTester extends \Codeception\Actor
      * ```
      *
      * @param $dirname
+     *
      * @see \Codeception\Module\Filesystem::deleteDir()
      */
     public function deleteDir($dirname)
@@ -112,6 +117,7 @@ class CliTester extends \Codeception\Actor
      *
      * @param $src
      * @param $dst
+     *
      * @see \Codeception\Module\Filesystem::copyDir()
      */
     public function copyDir($src, $dst)
@@ -135,6 +141,7 @@ class CliTester extends \Codeception\Actor
      *
      * @param $text
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Filesystem::seeInThisFile()
      */
     public function canSeeInThisFile($text)
@@ -157,6 +164,7 @@ class CliTester extends \Codeception\Actor
      * ```
      *
      * @param $text
+     *
      * @see \Codeception\Module\Filesystem::seeInThisFile()
      */
     public function seeInThisFile($text)
@@ -181,6 +189,7 @@ class CliTester extends \Codeception\Actor
      *
      * @param $text
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Filesystem::seeFileContentsEqual()
      */
     public function canSeeFileContentsEqual($text)
@@ -204,6 +213,7 @@ class CliTester extends \Codeception\Actor
      * ```
      *
      * @param $text
+     *
      * @see \Codeception\Module\Filesystem::seeFileContentsEqual()
      */
     public function seeFileContentsEqual($text)
@@ -225,6 +235,7 @@ class CliTester extends \Codeception\Actor
      *
      * @param $text
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Filesystem::dontSeeInThisFile()
      */
     public function cantSeeInThisFile($text)
@@ -245,6 +256,7 @@ class CliTester extends \Codeception\Actor
      * ```
      *
      * @param $text
+     *
      * @see \Codeception\Module\Filesystem::dontSeeInThisFile()
      */
     public function dontSeeInThisFile($text)
@@ -256,6 +268,7 @@ class CliTester extends \Codeception\Actor
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Deletes a file
+     *
      * @see \Codeception\Module\Filesystem::deleteThisFile()
      */
     public function deleteThisFile()
@@ -277,7 +290,8 @@ class CliTester extends \Codeception\Actor
      *
      * @param $filename
      * @param string $path
-     * Conditional Assertion: Test won't be stopped on fail
+     *                     Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Filesystem::seeFileFound()
      */
     public function canSeeFileFound($filename, $path = null)
@@ -299,6 +313,7 @@ class CliTester extends \Codeception\Actor
      *
      * @param $filename
      * @param string $path
+     *
      * @see \Codeception\Module\Filesystem::seeFileFound()
      */
     public function seeFileFound($filename, $path = null)
@@ -313,7 +328,8 @@ class CliTester extends \Codeception\Actor
      *
      * @param $filename
      * @param string $path
-     * Conditional Assertion: Test won't be stopped on fail
+     *                     Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Filesystem::dontSeeFileFound()
      */
     public function cantSeeFileFound($filename, $path = null)
@@ -328,6 +344,7 @@ class CliTester extends \Codeception\Actor
      *
      * @param $filename
      * @param string $path
+     *
      * @see \Codeception\Module\Filesystem::dontSeeFileFound()
      */
     public function dontSeeFileFound($filename, $path = null)
@@ -347,6 +364,7 @@ class CliTester extends \Codeception\Actor
      * ```
      *
      * @param $dirname
+     *
      * @see \Codeception\Module\Filesystem::cleanDir()
      */
     public function cleanDir($dirname)
@@ -361,6 +379,7 @@ class CliTester extends \Codeception\Actor
      *
      * @param $filename
      * @param $contents
+     *
      * @see \Codeception\Module\Filesystem::writeToFile()
      */
     public function writeToFile($filename, $contents)
@@ -374,6 +393,7 @@ class CliTester extends \Codeception\Actor
      * Executes a shell command
      *
      * @param $command
+     *
      * @see \Codeception\Module\Cli::runShellCommand()
      */
     public function runShellCommand($command)
@@ -388,6 +408,7 @@ class CliTester extends \Codeception\Actor
      *
      * @param $text
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Cli::seeInShellOutput()
      */
     public function canSeeInShellOutput($text)
@@ -401,6 +422,7 @@ class CliTester extends \Codeception\Actor
      * Checks that output from last executed command contains text
      *
      * @param $text
+     *
      * @see \Codeception\Module\Cli::seeInShellOutput()
      */
     public function seeInShellOutput($text)
@@ -416,6 +438,7 @@ class CliTester extends \Codeception\Actor
      * @param $text
      *
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Cli::dontSeeInShellOutput()
      */
     public function cantSeeInShellOutput($text)
@@ -442,6 +465,7 @@ class CliTester extends \Codeception\Actor
      *
      *
      * Conditional Assertion: Test won't be stopped on fail
+     *
      * @see \Codeception\Module\Cli::seeShellOutputMatches()
      */
     public function canSeeShellOutputMatches($regex)

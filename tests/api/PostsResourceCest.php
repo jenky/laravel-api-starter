@@ -67,8 +67,8 @@ class PostsResourceCest
     private function havePost(ApiTester $I, $data = [])
     {
         $data = array_merge([
-                'title' => 'Game of Thrones',
-                'body' => 'Body',
+                'title'      => 'Game of Thrones',
+                'body'       => 'Body',
                 'created_at' => new DateTime(),
                 'updated_at' => new  DateTime(),
         ], $data);
