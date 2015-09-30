@@ -1,6 +1,6 @@
 <?php
 
-if (!function_exists('array_rewrite')) {
+if (! function_exists('array_rewrite')) {
     /**
      * Replace root array key with child array key.
      * 
@@ -23,7 +23,7 @@ if (!function_exists('array_rewrite')) {
     }
 }
 
-if (!function_exists('datetime')) {
+if (! function_exists('datetime')) {
     /**
      * Parse datetime with Carbon.
      * 
@@ -36,11 +36,11 @@ if (!function_exists('datetime')) {
     {
         $defaultTz = config('app.timezone');
 
-        if (!$timezone && !empty(Auth::user()->timezone)) {
+        if (! $timezone && ! empty(Auth::user()->timezone)) {
             $timezone = Auth::user()->timezone;
         }
 
-        if (!in_array($timezone, timezone_identifiers_list())) {
+        if (! in_array($timezone, timezone_identifiers_list())) {
             $timezone = false;
         }
 
@@ -58,7 +58,7 @@ if (!function_exists('datetime')) {
     }
 }
 
-if (!function_exists('helper')) {
+if (! function_exists('helper')) {
     function helper($helper = null)
     {
         $helperManager = app('helper');
@@ -71,7 +71,7 @@ if (!function_exists('helper')) {
     }
 }
 
-if (!function_exists('prd')) {
+if (! function_exists('prd')) {
     /**
      * Print the passed variables and end the script.
      *
@@ -90,7 +90,7 @@ if (!function_exists('prd')) {
     }
 }
 
-if (!function_exists('vd')) {
+if (! function_exists('vd')) {
     /**
      * Dump the passed variables using var_dump and end the script.
      *
@@ -104,7 +104,7 @@ if (!function_exists('vd')) {
     }
 }
 
-if (!function_exists('get_update_rules')) {
+if (! function_exists('get_update_rules')) {
     /**
      * Get the validation update rules.
      *
@@ -115,9 +115,9 @@ if (!function_exists('get_update_rules')) {
     function get_update_rules(array $rules)
     {
         foreach ($rules as &$rule) {
-            if (is_array($rule) && !in_array('sometimes', $rule)) {
+            if (is_array($rule) && ! in_array('sometimes', $rule)) {
                 array_unshift($rule, 'sometimes');
-            } elseif (is_string($rule) && !str_contains('sometimes', $rule)) {
+            } elseif (is_string($rule) && ! str_contains('sometimes', $rule)) {
                 $rule = 'sometimes|'.$rule;
             }
         }
@@ -126,7 +126,7 @@ if (!function_exists('get_update_rules')) {
     }
 }
 
-if (!function_exists('cache_buster')) {
+if (! function_exists('cache_buster')) {
     /**
      * Get the path to a versioned Elixir file.
      *
@@ -150,7 +150,7 @@ if (!function_exists('cache_buster')) {
     }
 }
 
-if (!function_exists('random_filename')) {
+if (! function_exists('random_filename')) {
     /**
      * Generate random filename.
      *
@@ -178,7 +178,7 @@ if (!function_exists('random_filename')) {
     }
 }
 
-if (!function_exists('get_domain')) {
+if (! function_exists('get_domain')) {
     /**
      * Get the domain name from url.
      * 
@@ -199,7 +199,7 @@ if (!function_exists('get_domain')) {
     }
 }
 
-if (!function_exists('root_domain')) {
+if (! function_exists('root_domain')) {
     /**
      * Replace the subdomain with domain.
      * 

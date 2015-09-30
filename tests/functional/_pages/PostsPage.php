@@ -57,7 +57,7 @@ class PostsPage
     protected function fillFormFields($data)
     {
         foreach ($data as $field => $value) {
-            if (!isset(static::$formFields[$field])) {
+            if (! isset(static::$formFields[$field])) {
                 throw new \Exception("Form field  $field does not exist");
             }
             $this->tester->fillField(static::$formFields[$field], $value);
