@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Api\v1;
 
 use App\Http\Requests\ApiRequest;
+use App\Models\User;
 
 class UserRequest extends ApiRequest
 {
@@ -23,9 +24,6 @@ class UserRequest extends ApiRequest
      */
     public function rules()
     {
-        return [
-            'email'    => 'required',
-            'password' => 'required|min:6',
-        ];
+        return $this->route('users') ? get_update_rules(User::$rules) : User::$rules;
     }
 }

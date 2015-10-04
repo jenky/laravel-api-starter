@@ -16,7 +16,7 @@ class ApiController extends Controller
      * 
      * @return json
      */
-    protected function find($resource, $id)
+    protected function responseFind($resource, $id)
     {
         $data = apihelper($resource)->find($id);
 
@@ -25,5 +25,27 @@ class ApiController extends Controller
         }
 
         return response()->json($data);
+    }
+
+    /**
+     * Update resource by id.
+     * 
+     * @param mixed $resource
+     * @param int $id
+     * @param array $data
+     * 
+     * @return json
+     */
+    protected function responseUpdate($resource, $id, array $data)
+    {
+        $resource = $resource->find($id);
+
+        if (is_null($resource)) {
+            $this->response->errorNotFound();
+        }
+
+        $resource->update($data);
+
+        return response()->json($resource);
     }
 }

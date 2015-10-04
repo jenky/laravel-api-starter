@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API\v1;
 use App\Http\Controllers\ApiController;
 use App\Http\Requests\Api\v1\UserRequest;
 use App\Models\User;
+use App\Contracts\Repositories\UserRepository;
 use Illuminate\Http\Request;
 
 class UsersController extends ApiController
@@ -36,9 +37,11 @@ class UsersController extends ApiController
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(UserRequest $request, User $user)
+    public function store(UserRequest $request, UserRepository $userRepo)
     {
-        //
+        $userRepo->create($request);
+
+        return $this->response->created();
     }
 
     /**
@@ -50,7 +53,7 @@ class UsersController extends ApiController
      */
     public function show(User $user, $id)
     {
-        return $this->find($user, $id);
+        return $this->responseFind($user, $id);
     }
 
     /**
@@ -73,9 +76,14 @@ class UsersController extends ApiController
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, User $user, $id)
     {
-        //
+        $data = $request->except('password');
+        if ($request->input('password')) {
+            $data['password'] = bcrypt($request->input('password'));
+        }
+
+        return $this->responseUpdate($user, $id, $data);
     }
 
     /**

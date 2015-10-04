@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Contracts\Repositories\UserRepository as UserRepositoryContract;
+use App\Repositories\UserRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +25,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $services = [
+            UserRepositoryContract::class => UserRepository::class,
+        ];
+
+        foreach ($services as $key => $value) {
+            $this->app->bindIf($key, $value);
+        }
     }
 }
