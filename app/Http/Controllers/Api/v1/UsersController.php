@@ -6,7 +6,6 @@ use App\Http\Controllers\ApiController;
 use App\Http\Requests\Api\v1\UserRequest;
 use App\Models\User;
 use App\Contracts\Repositories\UserRepository;
-use Illuminate\Http\Request;
 
 class UsersController extends ApiController
 {

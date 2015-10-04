@@ -46,7 +46,7 @@ class User extends Model implements AuthenticatableContract,
     protected $dates = ['deleted_at'];
 
     /**
-     * Validaction rules
+     * Validaction rules.
      * 
      * @var array
      */
