@@ -27,7 +27,7 @@ Route::get('/', function () {
 $api = app(Dingo\Api\Routing\Router::class);
 
 $api->version('v1', ['middleware' => 'cors'], function ($api) {
-    $api->group(['namespace' => 'App\Http\Controllers\Api\v1'], function ($api) {
+    $api->group(['namespace' => 'App\Http\Controllers\API\v1'], function ($api) {
         $api->resources([
             'users' => 'UsersController',
         ]);
