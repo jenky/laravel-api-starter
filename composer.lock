@@ -215,12 +215,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dingo/api.git",
-                "reference": "4468b88b5f43a4e9c3f64d3a1e8803309e2b9625"
+                "reference": "4a378a809f63cfe8dc3303fa739f9eb76f3b18d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dingo/api/zipball/4468b88b5f43a4e9c3f64d3a1e8803309e2b9625",
-                "reference": "4468b88b5f43a4e9c3f64d3a1e8803309e2b9625",
+                "url": "https://api.github.com/repos/dingo/api/zipball/4a378a809f63cfe8dc3303fa739f9eb76f3b18d4",
+                "reference": "4a378a809f63cfe8dc3303fa739f9eb76f3b18d4",
                 "shasum": ""
             },
             "require": {
@@ -283,7 +283,7 @@
                 "laravel",
                 "restful"
             ],
-            "time": "2015-09-22 00:46:33"
+            "time": "2015-09-30 02:53:24"
         },
         {
             "name": "dingo/blueprint",
@@ -1054,16 +1054,16 @@
         },
         {
             "name": "jenky/laravel-api-helper",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenky/laravel-api-helper.git",
-                "reference": "44ce176b8b750145b4cf6d8bbdab61fb1dd13780"
+                "reference": "0883355b3754453d2adb4fc21fe7c31dd4ee297a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenky/laravel-api-helper/zipball/44ce176b8b750145b4cf6d8bbdab61fb1dd13780",
-                "reference": "44ce176b8b750145b4cf6d8bbdab61fb1dd13780",
+                "url": "https://api.github.com/repos/jenky/laravel-api-helper/zipball/0883355b3754453d2adb4fc21fe7c31dd4ee297a",
+                "reference": "0883355b3754453d2adb4fc21fe7c31dd4ee297a",
                 "shasum": ""
             },
             "require": {
@@ -1101,7 +1101,7 @@
                 "helper",
                 "laravel"
             ],
-            "time": "2015-09-25 07:28:08"
+            "time": "2015-09-30 06:50:13"
         },
         {
             "name": "jenky/laravel-envloader",
@@ -1247,16 +1247,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.1.17",
+            "version": "v5.1.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "415b5d824e15ee7cd18b8b23f96ae32b0b51d6a0"
+                "reference": "45e181369991579dc3ad015665eabbb72c0fadba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/415b5d824e15ee7cd18b8b23f96ae32b0b51d6a0",
-                "reference": "415b5d824e15ee7cd18b8b23f96ae32b0b51d6a0",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/45e181369991579dc3ad015665eabbb72c0fadba",
+                "reference": "45e181369991579dc3ad015665eabbb72c0fadba",
                 "shasum": ""
             },
             "require": {
@@ -1371,7 +1371,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-09-16 16:57:12"
+            "time": "2015-10-01 18:32:48"
         },
         {
             "name": "laravelcollective/html",
@@ -1425,16 +1425,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.14",
+            "version": "1.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "202c7775d959f377e2e302d93e7127c47604438a"
+                "reference": "31525caf9e8772683672fefd8a1ca0c0736020f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/202c7775d959f377e2e302d93e7127c47604438a",
-                "reference": "202c7775d959f377e2e302d93e7127c47604438a",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/31525caf9e8772683672fefd8a1ca0c0736020f4",
+                "reference": "31525caf9e8772683672fefd8a1ca0c0736020f4",
                 "shasum": ""
             },
             "require": {
@@ -1505,7 +1505,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2015-09-22 19:18:28"
+            "time": "2015-09-30 22:26:59"
         },
         {
             "name": "league/fractal",
@@ -3880,16 +3880,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.9",
+            "version": "4.8.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "73fad41adb5b7bc3a494bb930d90648df1d5e74b"
+                "reference": "463163747474815c5ccd4ae12b5b355ec12158e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/73fad41adb5b7bc3a494bb930d90648df1d5e74b",
-                "reference": "73fad41adb5b7bc3a494bb930d90648df1d5e74b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/463163747474815c5ccd4ae12b5b355ec12158e8",
+                "reference": "463163747474815c5ccd4ae12b5b355ec12158e8",
                 "shasum": ""
             },
             "require": {
@@ -3948,7 +3948,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-09-20 12:56:44"
+            "time": "2015-10-01 09:14:30"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
