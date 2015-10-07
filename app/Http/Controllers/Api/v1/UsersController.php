@@ -7,12 +7,18 @@ use App\Http\Requests\Api\v1\UserRequest;
 use App\Models\User;
 use App\Contracts\Repositories\UserRepository;
 
+/**
+ * @Resource("Users", uri="/users")
+ */
 class UsersController extends ApiController
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * 
+     * @Get("/")
+     * @Versions({"v1"})
      */
     public function index(User $user)
     {
