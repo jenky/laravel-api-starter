@@ -29,7 +29,7 @@ class ApiValidationException extends ValidationHttpException
 
         foreach ($errors->getMessages() as $field => $message) {
             $output[] = [
-                'code'    => 'validator_fails',
+                'code'    => 'validation_fails',
                 'field'   => $field,
                 'message' => isset($message[0]) ? $message[0] : '',
             ];
