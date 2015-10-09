@@ -138,7 +138,6 @@ if (! function_exists('get_rules')) {
     function get_rules(array $rules, $id = null)
     {
         foreach ($rules as $field => &$rule) {
-
             if (! is_array($rule)) {
                 $rule = explode('|', $rule);
             }
@@ -151,7 +150,7 @@ if (! function_exists('get_rules')) {
 
                 // Apply id to the unique rule.
                 foreach ($rule as &$_rule) {
-                    if (str_contains($_rule, 'unique')) {                        
+                    if (str_contains($_rule, 'unique')) {
                         $_rule .= ','.$field.','.$id;
                     }
                 }
