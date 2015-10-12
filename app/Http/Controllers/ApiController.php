@@ -92,8 +92,6 @@ class ApiController extends Controller
      */
     protected function buildFailedValidationMessage(Request $request)
     {
-        $method = strtoupper($request->method());
-
         return $this->getfailedValidationMessage($method);
     }
 

@@ -43,8 +43,6 @@ class ApiRequest extends FormRequest
      */
     protected function buildFailedValidationMessage(Request $request)
     {
-        $method = strtoupper($request->method());
-
         return $this->getfailedValidationMessage($method);
     }
 
