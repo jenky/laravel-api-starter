@@ -79,20 +79,7 @@ class ApiController extends Controller
      */
     protected function throwValidationException(Request $request, $validator)
     {
-        throw new ApiValidationException($validator->errors(), $this->buildFailedValidationMessage($request));
-    }
-
-    /**
-     * Build the failed validation message for the response
-     * based on standard REST method.
-     * 
-     * @param \Illuminate\Http\Request $request
-     * 
-     * @return string|null
-     */
-    protected function buildFailedValidationMessage(Request $request)
-    {
-        return $this->getfailedValidationMessage($method);
+        throw new ApiValidationException($validator->errors(), $this->getFailedValidationMessage($request->method()));
     }
 
     /**
@@ -102,9 +89,9 @@ class ApiController extends Controller
      * 
      * @return string|null
      */
-    protected function getfailedValidationMessage($method)
+    protected function getFailedValidationMessage($method)
     {
-        $messages = $this->failedValidationMessage();
+        $messages = $this->failedValidationMessages();
         $method = strtoupper($method);
 
         return isset($messages[$method]) ? $messages[$method] : null;
@@ -115,7 +102,7 @@ class ApiController extends Controller
      * 
      * @return array
      */
-    protected function failedValidationMessage()
+    protected function failedValidationMessages()
     {
         return [
             SymfonyRequest::METHOD_GET    => 'Can not retrive '.$this->resource,

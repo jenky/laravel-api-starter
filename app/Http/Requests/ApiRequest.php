@@ -27,23 +27,10 @@ class ApiRequest extends FormRequest
     protected function failedValidation(Validator $validator)
     {
         if ($this->container['request'] instanceof Request) {
-            throw new ApiValidationException($validator->errors(), $this->buildFailedValidationMessage($this->container['request']));
+            throw new ApiValidationException($validator->errors(), $this->getFailedValidationMessage($this->container['request']->method()));
         }
 
         parent::failedValidation($validator);
-    }
-
-    /**
-     * Build the failed validation message for the response
-     * based on standard REST method.
-     * 
-     * @param \Illuminate\Http\Request $request
-     * 
-     * @return string|null
-     */
-    protected function buildFailedValidationMessage(Request $request)
-    {
-        return $this->getfailedValidationMessage($method);
     }
 
     /**
@@ -53,9 +40,9 @@ class ApiRequest extends FormRequest
      * 
      * @return string|null
      */
-    protected function getfailedValidationMessage($method)
+    protected function getFailedValidationMessage($method)
     {
-        $messages = $this->failedValidationMessage();
+        $messages = $this->failedValidationMessages();
         $method = strtoupper($method);
 
         return isset($messages[$method]) ? $messages[$method] : null;
@@ -66,7 +53,7 @@ class ApiRequest extends FormRequest
      * 
      * @return array
      */
-    protected function failedValidationMessage()
+    protected function failedValidationMessages()
     {
         return [
             SymfonyRequest::METHOD_GET    => 'Can not retrive '.$this->resource,
