@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\ApiValidationException;
 use Dingo\Api\Routing\Helpers;
+use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
@@ -16,7 +18,7 @@ class ApiController extends Controller
      * 
      * @return json
      */
-    protected function responseFind($resource, $id)
+    protected function findResource($resource, $id)
     {
         $data = apihelper($resource)->find($id);
 
@@ -36,7 +38,7 @@ class ApiController extends Controller
      * 
      * @return json
      */
-    protected function responseUpdate($resource, $id, array $data)
+    protected function updateResource($resource, $id, array $data)
     {
         $resource = $resource->find($id);
 
@@ -47,5 +49,28 @@ class ApiController extends Controller
         $resource->update($data);
 
         return response()->json($resource);
+    }
+
+    /**
+     * Delete resource by id.
+     * 
+     * @param mixed $resource
+     * @param mixed $id
+     * 
+     * @return json
+     */
+    protected function deleteResource($resource, $id)
+    {
+        $resource->destroy($id);
+
+        return response()->json('', 204);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function throwValidationException(Request $request, $validator)
+    {
+        throw new ApiValidationException($validator->errors());        
     }
 }

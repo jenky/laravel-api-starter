@@ -6,6 +6,7 @@ use App\Http\Controllers\ApiController;
 use App\Http\Requests\API\v1\UserRequest;
 use App\Models\User;
 use App\Contracts\Repositories\UserRepository;
+use Illuminate\Http\Request;
 
 /**
  * @Resource("Users", uri="/users")
@@ -58,7 +59,7 @@ class UsersController extends ApiController
      */
     public function show(User $user, $id)
     {
-        return $this->responseFind($user, $id);
+        return $this->findResource($user, $id);
     }
 
     /**
@@ -88,7 +89,7 @@ class UsersController extends ApiController
             $data['password'] = bcrypt($request->input('password'));
         }
 
-        return $this->responseUpdate($user, $id, $data);
+        return $this->updateResource($user, $id, $data);
     }
 
     /**

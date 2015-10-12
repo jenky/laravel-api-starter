@@ -24,6 +24,6 @@ class UserRequest extends ApiRequest
      */
     public function rules()
     {
-        return $this->route('users') ? get_update_rules(User::$rules) : User::$rules;
+        return get_rules(User::$rules, $this->route('users'));
     }
 }
