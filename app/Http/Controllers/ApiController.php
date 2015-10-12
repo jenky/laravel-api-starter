@@ -79,7 +79,7 @@ class ApiController extends Controller
      */
     protected function throwValidationException(Request $request, $validator)
     {
-        throw new ApiValidationException($validator->errors(), $this->buildFailedValidationMessage($request));        
+        throw new ApiValidationException($validator->errors(), $this->buildFailedValidationMessage($request));
     }
 
     /**
@@ -104,7 +104,8 @@ class ApiController extends Controller
      * 
      * @return string|null
      */
-    protected function getfailedValidationMessage($method) {
+    protected function getfailedValidationMessage($method)
+    {
         $messages = $this->failedValidationMessage();
         $method = strtoupper($method);
 
@@ -119,11 +120,11 @@ class ApiController extends Controller
     protected function failedValidationMessage()
     {
         return [
-            SymfonyRequest::METHOD_GET    => 'Can not retrive ' . $this->resource,
-            SymfonyRequest::METHOD_POST   => 'Can not create new ' . $this->resource,
-            SymfonyRequest::METHOD_PUT    => 'Can not update ' . $this->resource,
-            SymfonyRequest::METHOD_PATCH  => 'Can not update ' . $this->resource,
-            SymfonyRequest::METHOD_DELETE => 'Can not delete ' . $this->resource,
+            SymfonyRequest::METHOD_GET    => 'Can not retrive '.$this->resource,
+            SymfonyRequest::METHOD_POST   => 'Can not create new '.$this->resource,
+            SymfonyRequest::METHOD_PUT    => 'Can not update '.$this->resource,
+            SymfonyRequest::METHOD_PATCH  => 'Can not update '.$this->resource,
+            SymfonyRequest::METHOD_DELETE => 'Can not delete '.$this->resource,
         ];
     }
 }

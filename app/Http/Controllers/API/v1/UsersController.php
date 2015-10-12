@@ -6,7 +6,6 @@ use App\Http\Controllers\ApiController;
 use App\Http\Requests\API\v1\UserRequest;
 use App\Models\User;
 use App\Contracts\Repositories\UserRepository;
-use Illuminate\Http\Request;
 
 /**
  * @Resource("Users", uri="/users")
