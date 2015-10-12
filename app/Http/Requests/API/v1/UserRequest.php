@@ -8,6 +8,13 @@ use App\Models\User;
 class UserRequest extends ApiRequest
 {
     /**
+     * The resource name.
+     * 
+     * @var string
+     */
+    protected $resource = 'user';
+
+    /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool

@@ -13,6 +13,13 @@ use App\Contracts\Repositories\UserRepository;
 class UsersController extends ApiController
 {
     /**
+     * The resource name.
+     * 
+     * @var string
+     */
+    protected $resource = 'user';
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
