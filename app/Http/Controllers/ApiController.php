@@ -71,6 +71,6 @@ class ApiController extends Controller
      */
     protected function throwValidationException(Request $request, $validator)
     {
-        throw new ApiValidationException($validator->errors());        
+        throw new ApiValidationException($validator->errors());
     }
 }

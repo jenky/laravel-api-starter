@@ -21,7 +21,7 @@ class ApiValidationException extends ResourceException
     {
         parent::__construct($message, $errors, $previous, $headers, $code);
     }
-    
+
     /**
      * Get the errors message.
      *
