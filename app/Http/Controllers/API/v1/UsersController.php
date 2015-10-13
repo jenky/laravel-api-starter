@@ -22,6 +22,8 @@ class UsersController extends ApiController
     /**
      * Display a listing of the resource.
      *
+     * @param \App\Models\User $user
+     * 
      * @return \Illuminate\Http\Response
      * 
      * @Get("/")
@@ -45,7 +47,8 @@ class UsersController extends ApiController
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param \App\Http\Requests\API\v1\UserRequest $request
+     * @param \App\Contracts\Repositories\UserRepository $userRepo
      *
      * @return \Illuminate\Http\Response
      */
@@ -59,6 +62,7 @@ class UsersController extends ApiController
     /**
      * Display the specified resource.
      *
+     * @param \App\Models\User $user
      * @param int $id
      *
      * @return \Illuminate\Http\Response
@@ -83,7 +87,8 @@ class UsersController extends ApiController
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param \App\Http\Requests\API\v1\UserRequest $request
+     * @param \App\Models\User $user
      * @param int                      $id
      *
      * @return \Illuminate\Http\Response
@@ -101,12 +106,13 @@ class UsersController extends ApiController
     /**
      * Remove the specified resource from storage.
      *
+     * @param \App\Models\User $user
      * @param int $id
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user, $id)
     {
-        //
+        return $this->deleteResource($user, $id);
     }
 }
