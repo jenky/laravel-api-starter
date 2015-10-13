@@ -56,11 +56,11 @@ class ApiRequest extends FormRequest
     protected function failedValidationMessages()
     {
         return [
-            SymfonyRequest::METHOD_GET    => 'Can not retrive '.$this->resource,
-            SymfonyRequest::METHOD_POST   => 'Can not create new '.$this->resource,
-            SymfonyRequest::METHOD_PUT    => 'Can not update '.$this->resource,
-            SymfonyRequest::METHOD_PATCH  => 'Can not update '.$this->resource,
-            SymfonyRequest::METHOD_DELETE => 'Can not delete '.$this->resource,
+            SymfonyRequest::METHOD_GET    => trans('api.can_not_find_resource', ['resource' => $this->resource]),
+            SymfonyRequest::METHOD_POST   => trans('api.can_not_create_resource', ['resource' => $this->resource]),
+            SymfonyRequest::METHOD_PUT    => trans('api.can_not_update_resource', ['resource' => $this->resource]),
+            SymfonyRequest::METHOD_PATCH  => trans('api.can_not_update_resource', ['resource' => $this->resource]),
+            SymfonyRequest::METHOD_DELETE => trans('api.can_not_delete_resource', ['resource' => $this->resource]),
         ];
     }
 }
