@@ -23,15 +23,16 @@ class ApiController extends Controller
      * 
      * @param mixed $resource
      * @param int   $id
+     * @param string|null $message
      * 
      * @return json
      */
-    protected function findResource($resource, $id)
+    protected function findResource($resource, $id, $message = null)
     {
         $data = apihelper($resource)->find($id);
 
         if (is_null($data)) {
-            $this->response->errorNotFound();
+            $this->response->errorNotFound($message);
         }
 
         return response()->json($data);
@@ -43,15 +44,16 @@ class ApiController extends Controller
      * @param mixed $resource
      * @param int $id
      * @param array $data
+     * @param string|null $message
      * 
      * @return json
      */
-    protected function updateResource($resource, $id, array $data)
+    protected function updateResource($resource, $id, array $data, $message = null)
     {
         $resource = $resource->find($id);
 
         if (is_null($resource)) {
-            $this->response->errorNotFound();
+            $this->response->errorNotFound($message);
         }
 
         $resource->update($data);
