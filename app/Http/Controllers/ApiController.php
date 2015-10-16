@@ -19,13 +19,33 @@ class ApiController extends Controller
     protected $resource = 'resource';
 
     /**
+     * Get the resource or response an not found error.
+     * 
+     * @param mixed $resource
+     * @param int $id
+     * @param string|null $message
+     * 
+     * @return mixed
+     */
+    protected function getResource($resource, $id, $message = null)
+    {
+        $resource = $resource->find($id);
+
+        if (is_null($resource)) {
+            $this->response->errorNotFound($message);
+        }
+
+        return $resource;
+    }
+
+    /**
      * Find resource by id using api helper.
      * 
      * @param mixed $resource
      * @param int   $id
      * @param string|null $message
      * 
-     * @return json
+     * @return \Illuminate\Http\Response
      */
     protected function findResource($resource, $id, $message = null)
     {
@@ -46,15 +66,11 @@ class ApiController extends Controller
      * @param array $data
      * @param string|null $message
      * 
-     * @return json
+     * @return \Illuminate\Http\Response
      */
     protected function updateResource($resource, $id, array $data, $message = null)
     {
-        $resource = $resource->find($id);
-
-        if (is_null($resource)) {
-            $this->response->errorNotFound($message);
-        }
+        $resource = $this->getResource($resource, $id, $message);
 
         $resource->update($data);
 
@@ -67,7 +83,7 @@ class ApiController extends Controller
      * @param mixed $resource
      * @param mixed $id
      * 
-     * @return json
+     * @return \Illuminate\Http\Response
      */
     protected function deleteResource($resource, $id)
     {
