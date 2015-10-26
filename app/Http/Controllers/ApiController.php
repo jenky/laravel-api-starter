@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exceptions\ApiValidationException;
+use Dingo\Api\Exceptions\ResourceException;
 use Dingo\Api\Routing\Helpers;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
@@ -90,6 +91,19 @@ class ApiController extends Controller
         $resource->destroy($id);
 
         return response()->json('', 204);
+    }
+
+    /**
+     * Throw the unprocessable entity exception.
+     * 
+     * @param string $message
+     * @param \Illuminate\Support\MessageBag|array $errors
+     * 
+     * @return \Illuminate\Http\Response
+     */
+    protected function errorUnprocessable($message = null, $errors = null)
+    {
+        throw new ResourceException($message, $errors);
     }
 
     /**
