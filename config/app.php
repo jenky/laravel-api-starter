@@ -149,11 +149,11 @@ return [
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
+        App\Providers\ConfigServiceProvider::class,
+        App\Providers\ContractServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
-        App\Providers\ConfigServiceProvider::class,
         App\Providers\BladeServiceProvider::class,
         App\Providers\HelperServiceProvider::class,
     ],
