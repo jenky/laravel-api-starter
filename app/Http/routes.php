@@ -11,25 +11,8 @@
 |
 */
 
+require app_path('Http/api_routes.php');
+
 Route::get('/', function () {
     return view('welcome');
-});
-
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-| 
-| Register all routes for API system.
-| 
-*/
-
-$api = app(Dingo\Api\Routing\Router::class);
-
-$api->version('v1', ['middleware' => 'cors'], function ($api) {
-    $api->group(['namespace' => 'App\Http\Controllers\API\v1'], function ($api) {
-        $api->resources([
-            'users' => 'UsersController',
-        ]);
-    });
 });
