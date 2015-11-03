@@ -9,7 +9,7 @@ use Illuminate\Support\ServiceProvider;
 class ContractServiceProvider extends ServiceProvider
 {
     /** 
-     * The application's contracts
+     * The application's contracts.
      * 
      * @var array
      */
