@@ -12,7 +12,7 @@ abstract class AbstractHelper
     protected $app;
 
     /**
-     * Class constructor
+     * Class constructor.
      * 
      * @param \Illuminate\Contracts\Foundation\Application $app
      * 
