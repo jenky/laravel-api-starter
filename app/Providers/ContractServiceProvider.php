@@ -8,6 +8,15 @@ use Illuminate\Support\ServiceProvider;
 
 class ContractServiceProvider extends ServiceProvider
 {
+    /** 
+     * The application's contracts
+     * 
+     * @var array
+     */
+    protected $services = [
+        UserRepositoryContract::class => UserRepository::class,
+    ];
+
     /**
      * Bootstrap the application services.
      *
@@ -25,11 +34,7 @@ class ContractServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $services = [
-            UserRepositoryContract::class => UserRepository::class,
-        ];
-
-        foreach ($services as $key => $value) {
+        foreach ($this->services as $key => $value) {
             $this->app->bindIf($key, $value);
         }
     }

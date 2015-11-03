@@ -154,8 +154,8 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\BladeServiceProvider::class,
         App\Providers\HelperServiceProvider::class,
+        App\Providers\BladeServiceProvider::class,
     ],
 
     /*
