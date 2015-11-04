@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\ApiCustomException;
 use App\Exceptions\ApiValidationException;
 use Dingo\Api\Exceptions\ResourceException;
 use Dingo\Api\Routing\Helpers;
@@ -99,11 +100,25 @@ class ApiController extends Controller
      * @param string $message
      * @param \Illuminate\Support\MessageBag|array $errors
      * 
-     * @return \Illuminate\Http\Response
+     * @throw \Dingo\Api\Exceptions\ResourceException
      */
     protected function errorUnprocessable($message = null, $errors = null)
     {
         throw new ResourceException($message, $errors);
+    }
+
+    /**
+     * Throw the custom exception.
+     * 
+     * @param string $message
+     * @param array $errors
+     * @param int $code
+     * 
+     * @throw \App\Exceptions\ApiCustomException
+     */
+    protected function errorCustom($message = null, $errors = null, $code = null)
+    {
+        throw new ApiCustomException($message, $errors, $code);
     }
 
     /**
