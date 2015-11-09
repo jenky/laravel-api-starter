@@ -89,7 +89,7 @@ class UsersController extends ApiController
      *
      * @param \App\Http\Requests\API\v1\UserRequest $request
      * @param \App\Models\User $user
-     * @param int                      $id
+     * @param int $id
      *
      * @return \Illuminate\Http\Response
      */
