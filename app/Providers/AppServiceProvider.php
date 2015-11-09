@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use \Exception;
+use Exception;
 use App\Exceptions\ApiCustomException;
 use Dingo\Api\Exception\Handler;
 use Illuminate\Support\ServiceProvider;
