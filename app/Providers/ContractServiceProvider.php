@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Contracts\Repositories\TrackRepository as TrackRepositoryContract;
 use App\Contracts\Repositories\UserRepository as UserRepositoryContract;
+use App\Repositories\TrackRepository;
 use App\Repositories\UserRepository;
 use Illuminate\Support\ServiceProvider;
 
@@ -14,7 +16,8 @@ class ContractServiceProvider extends ServiceProvider
      * @var array
      */
     protected $services = [
-        UserRepositoryContract::class => UserRepository::class,
+        UserRepositoryContract::class  => UserRepository::class,
+        TrackRepositoryContract::class => TrackRepository::class,
     ];
 
     /**
