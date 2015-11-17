@@ -21,8 +21,6 @@ $api->version('v1', ['middleware' => $middleware], function ($api) use ($namespa
     $api->group(['namespace' => $namespace.'v1'], function ($api) {
         $api->resources([
             'users'   => 'UsersController',
-            'tracks'  => 'TracksController',
-            'artists' => 'ArtistsController',
         ]);
     });
 });
