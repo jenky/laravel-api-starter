@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Exception;
+use Dingo\Api\Exception\ResourceException;
 use GrahamCampbell\Exceptions\ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 // use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
@@ -16,8 +17,7 @@ class Handler extends ExceptionHandler
      */
     protected $dontReport = [
         HttpException::class,
-        ApiCustomException::class,
-        ApiValidationException::class,
+        ResourceException::class,
     ];
 
     /**
