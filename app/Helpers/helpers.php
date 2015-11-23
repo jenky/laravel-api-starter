@@ -36,8 +36,8 @@ if (! function_exists('datetime')) {
     {
         $defaultTz = config('app.timezone');
 
-        if (! $timezone && ! empty(Auth::user()->timezone)) {
-            $timezone = Auth::user()->timezone;
+        if (! $timezone && ! empty(auth()->user()->timezone)) {
+            $timezone = auth()->user()->timezone;
         }
 
         if (! in_array($timezone, timezone_identifiers_list())) {
@@ -210,6 +210,26 @@ if (! function_exists('random_filename')) {
         }
 
         return $name.'.'.$extension;
+    }
+}
+
+if ( ! function_exists('isset_default')) {
+
+    /**
+     * Get the default value if the variable is not set.
+     */
+    function isset_default($value, $default = null) {
+        return isset($value) ? $value : $default;
+    }
+}
+
+if ( ! function_exists('empty_default')) {
+
+    /**
+     * Get the default value if the variable is not empty.
+     */
+    function empty_default($value, $default = null) {
+        return !empty($value) ? $value : $default;
     }
 }
 
