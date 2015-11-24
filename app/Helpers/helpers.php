@@ -59,7 +59,7 @@ if (! function_exists('datetime')) {
 
 if (! function_exists('helper')) {
     /**
-     * Create helper object
+     * Create helper object.
      * 
      * @param  string|null $helper
      * @return mixed
