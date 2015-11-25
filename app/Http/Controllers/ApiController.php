@@ -40,6 +40,17 @@ class ApiController extends Controller
     }
 
     /**
+     * List resources using api helper.
+     * 
+     * @param  mixed $resource
+     * @return \Illuminate\Http\Response
+     */
+    protected function listResources($resource)
+    {
+        return response()->json(apihelper($resource)->collection());
+    }
+
+    /**
      * Find resource by id using api helper.
      * 
      * @param  mixed $resource
@@ -55,7 +66,7 @@ class ApiController extends Controller
             $this->response->errorNotFound($message);
         }
 
-        return response($data);
+        return response()->json($data);
     }
 
     /**
@@ -73,7 +84,7 @@ class ApiController extends Controller
 
         $resource->update($data);
 
-        return response($resource);
+        return response()->json($resource);
     }
 
     /**
@@ -87,7 +98,7 @@ class ApiController extends Controller
     {
         $resource->destroy($id);
 
-        return response('', 204);
+        return response()->json('', 204);
     }
 
     /**

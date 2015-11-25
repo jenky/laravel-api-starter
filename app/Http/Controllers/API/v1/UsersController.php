@@ -24,7 +24,7 @@ class UsersController extends ApiController
      */
     public function index(User $user)
     {
-        return response((apihelper($user)->collection()));
+        return $this->listResources($user);
     }
 
     /**
