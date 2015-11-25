@@ -45,7 +45,7 @@ class ApiController extends Controller
      * @param  mixed $resource
      * @return \Illuminate\Http\Response
      */
-    protected function listResources($resource)
+    protected function listResource($resource)
     {
         return response()->json(apihelper($resource)->collection());
     }
