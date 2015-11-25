@@ -7,9 +7,6 @@ use App\Http\Requests\API\v1\UserRequest;
 use App\Models\User;
 use App\Contracts\Repositories\UserRepository;
 
-/**
- * @Resource("Users", uri="/users")
- */
 class UsersController extends ApiController
 {
     /**
@@ -22,16 +19,12 @@ class UsersController extends ApiController
     /**
      * Display a listing of the resource.
      *
-     * @param \App\Models\User $user
-     * 
+     * @param  \App\Models\User $user
      * @return \Illuminate\Http\Response
-     * 
-     * @Get("/")
-     * @Versions({"v1"})
      */
     public function index(User $user)
     {
-        return response()->json(apihelper($user)->collection());
+        return response((apihelper($user)->collection()));
     }
 
     /**
@@ -47,9 +40,8 @@ class UsersController extends ApiController
     /**
      * Store a newly created resource in storage.
      *
-     * @param \App\Http\Requests\API\v1\UserRequest $request
-     * @param \App\Contracts\Repositories\UserRepository $userRepo
-     *
+     * @param  \App\Http\Requests\API\v1\UserRequest $request
+     * @param  \App\Contracts\Repositories\UserRepository $userRepo
      * @return \Illuminate\Http\Response
      */
     public function store(UserRequest $request, UserRepository $userRepo)
@@ -62,9 +54,8 @@ class UsersController extends ApiController
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\User $user
-     * @param int $id
-     *
+     * @param  \App\Models\User $user
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show(User $user, $id)
@@ -75,8 +66,7 @@ class UsersController extends ApiController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
-     *
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -87,10 +77,9 @@ class UsersController extends ApiController
     /**
      * Update the specified resource in storage.
      *
-     * @param \App\Http\Requests\API\v1\UserRequest $request
-     * @param \App\Models\User $user
-     * @param int $id
-     *
+     * @param  \App\Http\Requests\API\v1\UserRequest $request
+     * @param  \App\Models\User $user
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(UserRequest $request, User $user, $id)
@@ -106,9 +95,8 @@ class UsersController extends ApiController
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\User $user
-     * @param int $id
-     *
+     * @param  \App\Models\User $user
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user, $id)

@@ -23,10 +23,9 @@ class ApiController extends Controller
     /**
      * Get the resource or response an not found error.
      * 
-     * @param mixed $resource
-     * @param int $id
-     * @param string|null $message
-     * 
+     * @param  mixed $resource
+     * @param  int $id
+     * @param  string|null $message
      * @return mixed
      */
     protected function getResource($resource, $id, $message = null)
@@ -43,10 +42,9 @@ class ApiController extends Controller
     /**
      * Find resource by id using api helper.
      * 
-     * @param mixed $resource
-     * @param int   $id
-     * @param string|null $message
-     * 
+     * @param  mixed $resource
+     * @param  int $id
+     * @param  string|null $message
      * @return \Illuminate\Http\Response
      */
     protected function findResource($resource, $id, $message = null)
@@ -57,17 +55,16 @@ class ApiController extends Controller
             $this->response->errorNotFound($message);
         }
 
-        return response()->json($data);
+        return response($data);
     }
 
     /**
      * Update resource by id.
      * 
-     * @param mixed $resource
-     * @param int $id
-     * @param array $data
-     * @param string|null $message
-     * 
+     * @param  mixed $resource
+     * @param  int $id
+     * @param  array $data
+     * @param  string|null $message
      * @return \Illuminate\Http\Response
      */
     protected function updateResource($resource, $id, array $data, $message = null)
@@ -76,22 +73,21 @@ class ApiController extends Controller
 
         $resource->update($data);
 
-        return response()->json($resource);
+        return response($resource);
     }
 
     /**
      * Delete resource by id.
      * 
-     * @param mixed $resource
-     * @param mixed $id
-     * 
+     * @param  mixed $resource
+     * @param  mixed $id
      * @return \Illuminate\Http\Response
      */
     protected function deleteResource($resource, $id)
     {
         $resource->destroy($id);
 
-        return response()->json('', 204);
+        return response('', 204);
     }
 
     /**
@@ -99,7 +95,6 @@ class ApiController extends Controller
      * 
      * @param string $message
      * @param \Illuminate\Support\MessageBag|array $errors
-     * 
      * @throw \Dingo\Api\Exceptions\ResourceException
      */
     protected function errorUnprocessable($message = null, $errors = null)
@@ -113,7 +108,6 @@ class ApiController extends Controller
      * @param string $message
      * @param array $errors
      * @param int $code
-     * 
      * @throw \App\Exceptions\ApiCustomException
      */
     protected function errorCustom($message = null, $errors = null, $code = null)
@@ -132,8 +126,7 @@ class ApiController extends Controller
     /**
      * Get the failed validation message for the response.
      * 
-     * @param string $method
-     * 
+     * @param  string $method
      * @return string|null
      */
     protected function getFailedValidationMessage($method)
