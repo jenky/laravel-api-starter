@@ -23,7 +23,7 @@
 		"phpspec/phpspec": "~2.1",
 		"barryvdh/laravel-ide-helper": "~2.0",
 		"barryvdh/laravel-debugbar": "2.*",
-		"laracasts/generators": "dev-master",
+		"jenky/laravel-api-generators": "~1.0",
 		"codeception/codeception": "~2.0"
 	},
 	"autoload": {
