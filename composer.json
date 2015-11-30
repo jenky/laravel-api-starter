@@ -14,7 +14,8 @@
 		"graham-campbell/exceptions": "~5.0",
 		"dingo/api": "1.0.*@dev",
 		"jenky/laravel-api-helper": "~1.0",
-		"barryvdh/laravel-cors": "0.7.x"
+		"barryvdh/laravel-cors": "0.7.x",
+		"rap2hpoutre/laravel-log-viewer": "0.4.*"
 	},
 	"require-dev": {
 		"fzaninotto/faker": "~1.4",
