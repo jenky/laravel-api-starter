@@ -63,7 +63,7 @@ class ApiController extends Controller
         $data = apihelper($resource)->find($id);
 
         if (is_null($data)) {
-            $this->response->errorNotFound($message);
+            $this->response->errorNotFound($this->getResponseMessage($message));
         }
 
         return response()->json($data);
@@ -80,7 +80,7 @@ class ApiController extends Controller
      */
     protected function updateResource($resource, $id, array $data, $message = null)
     {
-        $resource = $this->getResource($resource, $id, $message);
+        $resource = $this->getResource($resource, $id, $this->getResponseMessage($message));
 
         $resource->update($data);
 
@@ -101,12 +101,21 @@ class ApiController extends Controller
         return response()->json('', 204);
     }
 
+    protected function getResponseMessage($message)
+    {
+        if ($this->resource && is_null($message)) {
+            return trans('error.resource_not_found', ['resource' => $this->resource]);
+        }
+
+        return $message;
+    }
+
     /**
      * Throw the unprocessable entity exception.
      * 
      * @param string $message
      * @param \Illuminate\Support\MessageBag|array $errors
-     * @throw \Dingo\Api\Exceptions\ResourceException
+     * @throws \Dingo\Api\Exceptions\ResourceException
      */
     protected function errorUnprocessable($message = null, $errors = null)
     {
@@ -119,7 +128,7 @@ class ApiController extends Controller
      * @param string $message
      * @param array $errors
      * @param int $code
-     * @throw \App\Exceptions\ApiCustomException
+     * @throws \App\Exceptions\ApiCustomException
      */
     protected function errorCustom($message = null, $errors = null, $code = null)
     {
