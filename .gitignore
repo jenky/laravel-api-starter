@@ -5,3 +5,4 @@
 _ide_helper.php
 /storage/testing.sqlite
 composer.lock
+/public/docs
