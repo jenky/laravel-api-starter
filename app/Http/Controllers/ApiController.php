@@ -45,7 +45,7 @@ class ApiController extends Controller
      * @param  mixed $resource
      * @return \Illuminate\Http\Response
      */
-    protected function listResource($resource)
+    protected function listResources($resource)
     {
         return response()->json(apihelper($resource)->collection());
     }
@@ -60,11 +60,7 @@ class ApiController extends Controller
      */
     protected function findResource($resource, $id, $message = null)
     {
-        $data = apihelper($resource)->find($id);
-
-        if (is_null($data)) {
-            $this->response->errorNotFound($this->getResponseMessage($message));
-        }
+        $data = apihelper($resource)->findOrFail($id);
 
         return response()->json($data);
     }
