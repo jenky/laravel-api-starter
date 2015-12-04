@@ -6,5 +6,10 @@
   "dependencies": {
     "laravel-elixir": "^4.0.0",
     "bootstrap-sass": "^3.0.0"
+  },
+  "apidoc": {
+    "title": "Laravel API documentation",
+    "url" : "http://laravel.dev/api",
+    "sampleUrl": "http://laravel.dev/api"
   }
 }
