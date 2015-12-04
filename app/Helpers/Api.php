@@ -97,7 +97,7 @@ class Api extends Http
      */
     public function hasErrors()
     {
-        return (! empty(static::$errors));
+        return ! empty(static::$errors);
     }
 
     /**
