@@ -23,7 +23,7 @@
  */
 
 /**
- * @api {GET} /users/:id Get the user with an id
+ * @api {GET} /users/:id Retrieve the user.
  * @apiVersion 1.0.0
  * @apiGroup User
  *
@@ -31,7 +31,7 @@
  */
 
 /**
- * @api {PUT} /users/:id Update the user with an id.
+ * @api {PUT} /users/:id Update an user.
  * @apiVersion 1.0.0
  * @apiGroup User
  *
