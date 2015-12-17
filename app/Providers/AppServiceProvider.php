@@ -98,6 +98,6 @@ class AppServiceProvider extends ServiceProvider
             return true;
         }
 
-        return (config('api.debug') && config('app.debug'));
+        return config('api.debug') && config('app.debug');
     }
 }
