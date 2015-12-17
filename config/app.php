@@ -144,7 +144,7 @@ return [
         Dingo\Api\Provider\LaravelServiceProvider::class,
         Jenky\LaravelApiHelper\ApiServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
-        // Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        Arcanedev\LogViewer\LogViewerServiceProvider::class,
 
         /*
          * Application Service Providers...
