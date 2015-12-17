@@ -75,7 +75,7 @@ class AppServiceProvider extends ServiceProvider
             'status_code' => $exception->getStatusCode(),
         ];
 
-        if (config('api.debug') || config('app.debug')) {
+        if ($this->isApiDebugEnabled()) {
             $response['debug'] = [
                 'line'  => $exception->getLine(),
                 'file'  => $exception->getFile(),
@@ -85,5 +85,19 @@ class AppServiceProvider extends ServiceProvider
         }
 
         return $response;
+    }
+
+    /**
+     * Check if API debug mode is enabled.
+     * 
+     * @return bool
+     */
+    protected function isApiDebugEnabled()
+    {
+        if (config('api.debug')) {
+            return true;
+        }
+
+        return (config('api.debug') && config('app.debug'));
     }
 }
