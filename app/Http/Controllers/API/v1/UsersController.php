@@ -85,8 +85,8 @@ class UsersController extends ApiController
     public function update(UserRequest $request, User $user, $id)
     {
         $data = $request->except('password');
-        if ($request->input('password')) {
-            $data['password'] = bcrypt($request->input('password'));
+        if ($password = $request->input('password')) {
+            $data['password'] = bcrypt($password);
         }
 
         return $this->updateResource($user, $id, $data);
