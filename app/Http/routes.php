@@ -13,8 +13,6 @@
 
 require app_path('Http/api_routes.php');
 
-// Route::get('_logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
-
 Route::get('/', function () {
     return view('welcome');
 });
