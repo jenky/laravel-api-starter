@@ -51,6 +51,7 @@ class UserRepository implements Contract
         }
 
         $user = $this->model->findOrFail($id);
+
         return $user->update($data);
     }
 }
