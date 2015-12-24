@@ -8,8 +8,8 @@
 
 return [
     'local' => [
-        'app' => [
-            'url' => 'http://laravel.dev',
-        ],
+        // 'app' => [
+        // 	'url' => 'http://mylocaldomain',
+        // ],
     ],
 ];

@@ -7,6 +7,15 @@ use Symfony\Component\HttpFoundation\Response;
 class Api extends Http
 {
     /**
+     * List of custom error codes and messages.
+     * 
+     * @var array
+     */
+    public static $customStatusTexts = [
+        1000 => 'Validation Failed',
+    ];
+
+    /**
      * List Errors.
      * 
      * @var array
@@ -16,9 +25,9 @@ class Api extends Http
     /**
      * Respone json errors payload.
      * 
-     * @param int    $code
+     * @param int $code
      * @param string $message
-     * @param int    $status
+     * @param int $status
      * 
      * @return \Response
      */
@@ -30,9 +39,9 @@ class Api extends Http
     /**
      * Respone json errors payload.
      * 
-     * @param array  $errors
+     * @param array $errors
      * @param string $message
-     * @param int    $status
+     * @param int $status
      * 
      * @return \Response
      */
@@ -44,19 +53,19 @@ class Api extends Http
     /**
      * Get error message based on http error codes and custom error codes.
      * 
-     * @param int    $code
+     * @param int $code
      * @param string $message
      * 
      * @return array
      */
     public function getErrorMessage($code, $message = '')
     {
-        $statusTexts = Response::$statusTexts;
+        $statusTexts = static::$customStatusTexts + Response::$statusTexts;
 
         $message = (isset($statusTexts[$code]) && ! $message) ? $statusTexts[$code] : $message;
 
         return [
-            'code'    => $code,
+            'code' => $code,
             'message' => $message,
         ];
     }
@@ -64,7 +73,7 @@ class Api extends Http
     /**
      * Set error code and message.
      * 
-     * @param int    $code
+     * @param int $code
      * @param string $message
      * 
      * @return App\Helpers\Api
@@ -101,6 +110,16 @@ class Api extends Http
     }
 
     /**
+     * Allias of hasErrors().
+     * 
+     * @return bool
+     */
+    public function hasError()
+    {
+        return $this->hasErrors();
+    }
+
+    /**
      * Get Errors.
      * 
      * @return array
@@ -117,7 +136,7 @@ class Api extends Http
      * 
      * @return \Response
      */
-    public function response($status = 422, array $headers = [], $options = 0)
+    public function response($status = 400, array $headers = [], $options = 0)
     {
         $errors = static::$errors;
         static::$errors = [];

@@ -17,7 +17,7 @@ class UserRepository implements Contract
      */
     public function __construct()
     {
-        $model = config('auth.model');
+        $model = config('auth.providers.users.model');
         $this->model = new $model;
     }
 

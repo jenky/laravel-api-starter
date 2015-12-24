@@ -12,6 +12,6 @@
     @include('partials.alert', [
         'message'     => $list,
         'alertClass'  => isset($alertClass) ? $alertClass : 'alert-danger',
-        'dismissible' => true
+        'dismissible' => 1
     ])
 @endif
