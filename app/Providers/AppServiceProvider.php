@@ -41,7 +41,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app[Handler::class]->register(function (ApiCustomException $e) {
             $response = $this->getDefaultExceptionResponse($e);
-            
+
             if ($e->hasErrors()) {
                 $response += $e->getErrors();
             }
