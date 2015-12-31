@@ -14,7 +14,7 @@ $namespace = 'App\\Http\\Controllers\\API\\';
 $middleware = ['cors'];
 
 if (! is_null(app('debugbar'))) {
-    $middleware[] = 'Barryvdh\Debugbar\Middleware\Debugbar';
+    $middleware[] = Barryvdh\Debugbar\Middleware\Debugbar::class;
 }
 
 $api->version('v1', ['middleware' => $middleware], function ($api) use ($namespace) {
