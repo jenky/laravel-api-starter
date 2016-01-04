@@ -48,7 +48,7 @@ class ResponseMacroServiceProvider extends ServiceProvider
         Response::macro($name, function ($value, TransformerAbstract $transformer, $keys = [], SerializerAbstract $serializer = null) use ($app, $method) {
             $response = $app[ResponseFactory::class];
             $serializer = $serializer ?: new JsonNormalizeSerializer;
-            
+
             return $response->{$method}($value, $transformer, $keys, function ($resource, $fractal) use ($app, $serializer) {
                 $fractal->setSerializer($serializer);
 
