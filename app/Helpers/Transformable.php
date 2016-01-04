@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 trait Transformable
 {
     /**
-     * Get all transform keys.
+     * Get all transformation data.
      *
      * @return array
      */
