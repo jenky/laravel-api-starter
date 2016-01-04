@@ -18,8 +18,9 @@ class ResponseMacroServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->makeItemMacro();
-        $this->makeCollectionMacro();
+        $this->buildResponseMacro('item');
+        $this->buildResponseMacro('collection');
+        $this->buildResponseMacro('paginator');
     }
 
     /**
@@ -33,37 +34,29 @@ class ResponseMacroServiceProvider extends ServiceProvider
     }
 
     /**
-     * Make collection macro.
+     * Build the response macro.
      *
-     * @return \Illuminate\Http\Response
+     * @param  string $name
+     * @param  string|null $method
+     * @return void
      */
-    protected function makeItemMacro()
+    protected function buildResponseMacro($name, $method = null)
     {
+        $method = $method ?: $name;
         $app = $this->app;
-        Response::macro('item', function ($value, TransformerAbstract $transformer, $keys = [], SerializerAbstract $serializer = null) use ($app) {
+
+        Response::macro($name, function ($value, TransformerAbstract $transformer, $keys = [], SerializerAbstract $serializer = null) use ($app, $method) {
             $response = $app[ResponseFactory::class];
             $serializer = $serializer ?: new JsonNormalizeSerializer;
-
-            return $response->item($value, $transformer, $keys, function ($resource, $fractal) use ($serializer) {
+            
+            return $response->{$method}($value, $transformer, $keys, function ($resource, $fractal) use ($app, $serializer) {
                 $fractal->setSerializer($serializer);
-            });
-        });
-    }
 
-    /**
-     * Make collection macro.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    protected function makeCollectionMacro()
-    {
-        $app = $this->app;
-        Response::macro('collection', function ($value, TransformerAbstract $transformer, $keys = [], SerializerAbstract $serializer = null) use ($app) {
-            $response = $app[ResponseFactory::class];
-            $serializer = $serializer ?: new JsonNormalizeSerializer;
-
-            return $response->collection($value, $transformer, $keys, function ($resource, $fractal) use ($serializer) {
-                $fractal->setSerializer($serializer);
+                $with = $app['config']->get('apihelper.prefix', '');
+                $with .= 'with';
+                if ($includes = $app['request']->input($with)) {
+                    $fractal->parseIncludes($includes);
+                }
             });
         });
     }
