@@ -43,6 +43,7 @@ class ResponseMacroServiceProvider extends ServiceProvider
         Response::macro('item', function ($value, TransformerAbstract $transformer, $keys = [], SerializerAbstract $serializer = null) use ($app) {
             $response = $app[ResponseFactory::class];
             $serializer = $serializer ?: new JsonNormalizeSerializer;
+
             return $response->item($value, $transformer, $keys, function ($resource, $fractal) use ($serializer) {
                 $fractal->setSerializer($serializer);
             });
@@ -60,6 +61,7 @@ class ResponseMacroServiceProvider extends ServiceProvider
         Response::macro('collection', function ($value, TransformerAbstract $transformer, $keys = [], SerializerAbstract $serializer = null) use ($app) {
             $response = $app[ResponseFactory::class];
             $serializer = $serializer ?: new JsonNormalizeSerializer;
+
             return $response->collection($value, $transformer, $keys, function ($resource, $fractal) use ($serializer) {
                 $fractal->setSerializer($serializer);
             });
