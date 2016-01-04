@@ -15,7 +15,7 @@ trait Transformable
     {
         $output = [];
 
-        if (!is_array($this->transformable)) {
+        if (! is_array($this->transformable)) {
             return $output;
         }
 
