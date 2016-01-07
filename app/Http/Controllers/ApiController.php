@@ -47,7 +47,9 @@ class ApiController extends Controller
      */
     protected function listResources($resource)
     {
-        return response()->json(apihelper($resource)->collection());
+        $resources = $limit ? apihelper($resource)->paginate(intval($limit)) : apihelper($resource)->collection();
+        
+        return response()->json($resources);
     }
 
     /**
