@@ -43,12 +43,13 @@ class ApiController extends Controller
      * List resources using api helper.
      * 
      * @param  mixed $resource
+     * @param  int|null $limit
      * @return \Illuminate\Http\Response
      */
-    protected function listResources($resource)
+    protected function listResources($resource, $limit = null)
     {
         $resources = $limit ? apihelper($resource)->paginate(intval($limit)) : apihelper($resource)->collection();
-        
+
         return response()->json($resources);
     }
 
@@ -99,7 +100,13 @@ class ApiController extends Controller
         return response()->json('', 204);
     }
 
-    protected function getResponseMessage($message)
+    /**
+     * Get the default response message.
+     *
+     * @param  string|null $message
+     * @return string
+     */
+    protected function getResponseMessage($message = null)
     {
         if ($this->resource && is_null($message)) {
             return trans('error.resource_not_found', ['resource' => $this->resource]);
