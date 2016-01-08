@@ -10,7 +10,7 @@
 */
 
 $api = app(Dingo\Api\Routing\Router::class);
-$namespace = 'App\\Http\\Controllers\\API\\';
+$namespace = app()->getNamespace().'Http\\Controllers\\API\\';
 $middleware = ['cors'];
 
 if (! is_null(app('debugbar'))) {
