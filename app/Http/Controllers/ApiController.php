@@ -118,8 +118,8 @@ class ApiController extends Controller
     /**
      * Throw the unprocessable entity exception.
      * 
-     * @param string $message
-     * @param \Illuminate\Support\MessageBag|array $errors
+     * @param  string $message
+     * @param  \Illuminate\Support\MessageBag|array $errors
      * @throws \Dingo\Api\Exceptions\ResourceException
      */
     protected function errorUnprocessable($message = null, $errors = null)
@@ -130,9 +130,9 @@ class ApiController extends Controller
     /**
      * Throw the custom exception.
      * 
-     * @param string $message
-     * @param array $errors
-     * @param int $code
+     * @param  string $message
+     * @param  array $errors
+     * @param  int $code
      * @throws \App\Exceptions\ApiCustomException
      */
     protected function errorCustom($message = null, $errors = null, $code = null)
