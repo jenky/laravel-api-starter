@@ -11,7 +11,7 @@
 
 $api = app(Dingo\Api\Routing\Router::class);
 $namespace = app()->getNamespace().'Http\\Controllers\\API\\';
-$middleware = ['cors'];
+$middleware = ['api'];
 
 if (! is_null(app('debugbar'))) {
     $middleware[] = Barryvdh\Debugbar\Middleware\Debugbar::class;
