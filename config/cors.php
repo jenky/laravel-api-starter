@@ -11,7 +11,7 @@ return [
     | to accept any value, the allowed methods however have to be explicitly listed.
     |
     */
-    
+
     'supportsCredentials' => false,
     'allowedOrigins'      => ['*'],
     'allowedHeaders'      => ['Accept', 'Authorization', 'Content-Type', 'Origin', 'X-Request-With'],
@@ -19,5 +19,5 @@ return [
     'exposedHeaders'      => [],
     'maxAge'              => 0,
     'hosts'               => [],
-    
+
 ];

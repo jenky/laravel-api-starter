@@ -22,9 +22,9 @@ class RateLimit extends ThrottleRequests
                 'X-RateLimit-Remaining' => $maxAttempts - $this->limiter->attempts($key) + 1,
             ]);
         }
-        
+
         $key = $this->resolveRequestSignature($request);
-        
+
         if ($this->limiter->tooManyAttempts($key, $maxAttempts, $decayMinutes)) {
             throw new HttpException(429, 'Too Many Attempts.', null, [
                 'Retry-After' => $this->limiter->availableIn($key),
