@@ -1,8 +1,9 @@
 /vendor
 /node_modules
 /bower_components
+/public/storage
+/public/docs
 .env
 _ide_helper.php
 /storage/testing.sqlite
 composer.lock
-/public/docs
