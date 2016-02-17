@@ -8,7 +8,7 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 class ApiCustomException extends HttpException
 {
     /**
-     *  Errors.
+     * List Errors.
      *
      * @var array
      */
@@ -17,12 +17,11 @@ class ApiCustomException extends HttpException
     /**
      * Create a new resource exception instance.
      *
-     * @param string                               $message
-     * @param array                                $errors
-     * @param int                                  $code
-     * @param \Exception                           $previous
-     * @param array                                $headers
-     *
+     * @param  string $message
+     * @param  array $errors
+     * @param  int $code
+     * @param  \Exception $previous
+     * @param  array $headers
      * @return void
      */
     public function __construct($message = null, $errors = null, $code = 422, Exception $previous = null, $headers = [])
