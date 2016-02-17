@@ -4,21 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Exceptions\ApiCustomException;
 use App\Exceptions\ApiValidationException;
+use App\Http\Requests\ValidationMessages;
 use Dingo\Api\Exceptions\ResourceException;
 use Dingo\Api\Routing\Helpers;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 
 class ApiController extends Controller
 {
-    use Helpers;
-
-    /**
-     * The resource name for the validation message.
-     * 
-     * @var string
-     */
-    protected $resource = 'resource';
+    use Helpers, ValidationMessages;
 
     /**
      * Get the resource or response an not found error.
@@ -145,36 +138,6 @@ class ApiController extends Controller
      */
     protected function throwValidationException(Request $request, $validator)
     {
-        throw new ApiValidationException($validator->errors(), $this->getFailedValidationMessage($request->method()));
-    }
-
-    /**
-     * Get the failed validation message for the response.
-     * 
-     * @param  string $method
-     * @return string|null
-     */
-    protected function getFailedValidationMessage($method)
-    {
-        $messages = $this->failedValidationMessages();
-        $method = strtoupper($method);
-
-        return isset($messages[$method]) ? $messages[$method] : null;
-    }
-
-    /**
-     * List of the failed validation messages.
-     * 
-     * @return array
-     */
-    protected function failedValidationMessages()
-    {
-        return [
-            SymfonyRequest::METHOD_GET    => trans('api.can_not_find_resource', ['resource' => $this->resource]),
-            SymfonyRequest::METHOD_POST   => trans('api.can_not_create_resource', ['resource' => $this->resource]),
-            SymfonyRequest::METHOD_PUT    => trans('api.can_not_update_resource', ['resource' => $this->resource]),
-            SymfonyRequest::METHOD_PATCH  => trans('api.can_not_update_resource', ['resource' => $this->resource]),
-            SymfonyRequest::METHOD_DELETE => trans('api.can_not_delete_resource', ['resource' => $this->resource]),
-        ];
+        throw new ApiValidationException($validator->errors(), $this->getFailedValidationMessage($request));
     }
 }
