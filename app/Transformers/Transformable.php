@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Helpers;
+namespace App\Transformers;
 
 use Illuminate\Support\Str;
 
