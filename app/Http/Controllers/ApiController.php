@@ -33,7 +33,7 @@ class ApiController extends Controller
         $resource = $resource->find($id);
 
         if (is_null($resource)) {
-            $this->response->errorNotFound($message);
+            $this->response->errorNotFound($this->getResponseMessage($message));
         }
 
         return $resource;
@@ -79,7 +79,7 @@ class ApiController extends Controller
      */
     protected function updateResource($resource, $id, array $data, $message = null)
     {
-        $resource = $this->getResource($resource, $id, $this->getResponseMessage($message));
+        $resource = $this->getResource($resource, $id, $message);
 
         $resource->update($data);
 
