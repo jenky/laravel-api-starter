@@ -2,10 +2,10 @@
 
 namespace App\Http\Requests\API\v1;
 
-use App\Http\Requests\ApiRequest;
+use App\Http\Requests\API\Request;
 use App\Models\User;
 
-class UserRequest extends ApiRequest
+class UserRequest extends Request
 {
     /**
      * The resource name.

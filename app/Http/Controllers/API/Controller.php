@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
 use App\Exceptions\ApiCustomException;
 use App\Exceptions\ApiValidationException;
+use App\Http\Controllers\Controller as BaseController;
 use App\Http\Requests\ValidationMessages;
 use Dingo\Api\Exceptions\ResourceException;
 use Dingo\Api\Routing\Helpers;
 use Illuminate\Http\Request;
 
-class ApiController extends Controller
+class Controller extends BaseController
 {
     use Helpers, ValidationMessages;
 

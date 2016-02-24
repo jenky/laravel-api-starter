@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\API\v1;
 
-use App\Http\Controllers\ApiController;
+use App\Contracts\Repositories\UserRepository;
+use App\Http\Controllers\API\Controller;
 use App\Http\Requests\API\v1\UserRequest;
 use App\Models\User;
-use App\Contracts\Repositories\UserRepository;
 
-class UsersController extends ApiController
+class UsersController extends Controller
 {
     /**
      * The resource name.
