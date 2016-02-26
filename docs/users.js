@@ -1,4 +1,10 @@
 /**
+ * @apiDefine UserGroup User
+ *
+ * **Users.**
+ */
+
+/**
  * @apiDefine UserParams
  * 
  * @apiParam {String} first_name First name
@@ -8,32 +14,36 @@
  */
 
 /**
- * @api {GET} /users List all users.
+ * @api {GET} /users List all users
  * @apiVersion 1.0.0
- * @apiGroup User
+ * @apiGroup UserGroup
+ * @apiDescription List all users.
  */
 
 /**
- * @api {POST} /users Create a new user.
+ * @api {POST} /users Create a new user
  * @apiVersion 1.0.0
- * @apiGroup User
+ * @apiGroup UserGroup
+ * @apiDescription Create a new user.
  *
  * @apiUse UserParams
  * @apiSampleRequest off
  */
 
 /**
- * @api {GET} /users/:id Retrieve the user.
+ * @api {GET} /users/:id Retrieve the user
  * @apiVersion 1.0.0
- * @apiGroup User
+ * @apiGroup UserGroup
+ * @apiDescription Retrieve the user.
  *
  * @apiSampleRequest /users/1
  */
 
 /**
- * @api {PUT} /users/:id Update an user.
+ * @api {PUT} /users/:id Update an user
  * @apiVersion 1.0.0
- * @apiGroup User
+ * @apiGroup UserGroup
+ * @apiDescription Update an user.
  *
  * @apiUse UserParams
  * @apiSampleRequest off
