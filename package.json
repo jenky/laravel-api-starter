@@ -1,5 +1,8 @@
 {
   "private": true,
+  "scripts": {
+    "apidoc": "apidoc -i docs -o public/docs"
+  },
   "devDependencies": {
     "gulp": "^3.8.8"
   },
