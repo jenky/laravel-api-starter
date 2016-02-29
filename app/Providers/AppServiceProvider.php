@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Register the API custom exception.
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     protected function registerApiCustomError()
@@ -52,7 +52,7 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Register Model not found for API.
-     * 
+     *
      * @throws \Symfony\Component\HttpKernel\Exception\HttpException
      */
     protected function registerApiModelNotFoundException()
@@ -65,7 +65,7 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Get the default exception response format.
-     * 
+     *
      * @param \Exception $exception
      * @return array
      */
@@ -90,7 +90,7 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Check if API debug mode is enabled.
-     * 
+     *
      * @return bool
      */
     protected function isApiDebugEnabled()
