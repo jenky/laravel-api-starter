@@ -9,7 +9,7 @@ class UserRequest extends Request
 {
     /**
      * The resource name.
-     * 
+     *
      * @var string
      */
     protected $resource = 'user';

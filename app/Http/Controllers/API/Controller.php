@@ -16,7 +16,7 @@ class Controller extends BaseController
 
     /**
      * Get the resource or response an not found error.
-     * 
+     *
      * @param  mixed $resource
      * @param  int $id
      * @param  string|null $message
@@ -35,7 +35,7 @@ class Controller extends BaseController
 
     /**
      * List resources using api helper.
-     * 
+     *
      * @param  mixed $resource
      * @param  int|null $limit
      * @return \Illuminate\Http\Response
@@ -49,7 +49,7 @@ class Controller extends BaseController
 
     /**
      * Find resource by id using api helper.
-     * 
+     *
      * @param  mixed $resource
      * @param  int $id
      * @param  string|null $message
@@ -64,7 +64,7 @@ class Controller extends BaseController
 
     /**
      * Update resource by id.
-     * 
+     *
      * @param  mixed $resource
      * @param  int $id
      * @param  array $data
@@ -82,7 +82,7 @@ class Controller extends BaseController
 
     /**
      * Delete resource by id.
-     * 
+     *
      * @param  mixed $resource
      * @param  mixed $id
      * @return \Illuminate\Http\Response
@@ -111,7 +111,7 @@ class Controller extends BaseController
 
     /**
      * Throw the unprocessable entity exception.
-     * 
+     *
      * @param  string $message
      * @param  \Illuminate\Support\MessageBag|array $errors
      * @throws \Dingo\Api\Exceptions\ResourceException
@@ -123,7 +123,7 @@ class Controller extends BaseController
 
     /**
      * Throw the custom exception.
-     * 
+     *
      * @param  string $message
      * @param  array $errors
      * @param  int $code

@@ -19,7 +19,7 @@ trait ValidationMessages
 
     /**
      * Get the failed validation message for the request.
-     * 
+     *
      * @param  \Illuminate\Http\Request $request
      * @return string|null
      */
@@ -34,7 +34,7 @@ trait ValidationMessages
 
     /**
      * List of the default failed validation messages.
-     * 
+     *
      * @param  string $method
      * @return string|null
      */

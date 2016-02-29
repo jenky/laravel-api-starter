@@ -11,7 +11,7 @@ class UsersController extends Controller
 {
     /**
      * The resource name.
-     * 
+     *
      * @var string
      */
     protected $resource = 'user';
