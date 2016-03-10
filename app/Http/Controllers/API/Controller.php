@@ -19,15 +19,15 @@ class Controller extends BaseController
      *
      * @param  mixed $resource
      * @param  int $id
-     * @param  string|null $message
+     * @param  callbable|null $callback
      * @return mixed
      */
-    protected function getResource($resource, $id, $message = null)
+    protected function getResource($resource, $id, callbable $callback = null)
     {
         $resource = $resource->find($id);
 
-        if (is_null($resource)) {
-            $this->response->errorNotFound($this->getResponseMessage($message));
+        if (is_null($resource) && !is_null($callback)) {
+            return $callback;
         }
 
         return $resource;
@@ -44,7 +44,7 @@ class Controller extends BaseController
     {
         $resources = $limit ? apihelper($resource)->paginate(intval($limit)) : apihelper($resource)->collection();
 
-        return response()->json($resources);
+        return $resources;
     }
 
     /**
@@ -57,9 +57,9 @@ class Controller extends BaseController
      */
     protected function findResource($resource, $id, $message = null)
     {
-        $data = apihelper($resource)->findOrFail($id);
+        $resource = apihelper($resource)->findOrFail($id);
 
-        return response()->json($data);
+        return $resource;
     }
 
     /**
@@ -73,11 +73,11 @@ class Controller extends BaseController
      */
     protected function updateResource($resource, $id, array $data, $message = null)
     {
-        $resource = $this->getResource($resource, $id, $message);
+        $resource = $resource->findOrFail($id);
 
         $resource->update($data);
 
-        return response()->json($resource);
+        return $resource;
     }
 
     /**
@@ -91,7 +91,7 @@ class Controller extends BaseController
     {
         $resource->destroy($id);
 
-        return response()->json('', 204);
+        return response('', 204);
     }
 
     /**
