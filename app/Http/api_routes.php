@@ -13,7 +13,7 @@ $api = app(Dingo\Api\Routing\Router::class);
 $namespace = app()->getNamespace().'Http\\Controllers\\API\\';
 $middleware = ['api'];
 
-if (! is_null(app(Barryvdh\Debugbar\LaravelDebugbar::class))) {
+if (class_exists(Barryvdh\Debugbar\LaravelDebugbar::class) && ! is_null(app(Barryvdh\Debugbar\LaravelDebugbar::class))) {
     $middleware[] = Barryvdh\Debugbar\Middleware\Debugbar::class;
 }
 
