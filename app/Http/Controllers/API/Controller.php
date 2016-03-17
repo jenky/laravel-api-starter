@@ -8,7 +8,9 @@ use App\Http\Controllers\Controller as BaseController;
 use App\Http\Requests\ValidationMessages;
 use Dingo\Api\Exceptions\ResourceException;
 use Dingo\Api\Routing\Helpers;
+use Exception;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Controller extends BaseController
 {
@@ -26,7 +28,7 @@ class Controller extends BaseController
     {
         $resource = $resource->find($id);
 
-        if (is_null($resource) && ! is_null($callback)) {
+        if (is_null($resource) && !is_null($callback)) {
             return $callback;
         }
 
@@ -110,28 +112,42 @@ class Controller extends BaseController
     }
 
     /**
-     * Throw the unprocessable entity exception.
+     * Throws the unprocessable entity exception.
      *
      * @param  string $message
      * @param  \Illuminate\Support\MessageBag|array $errors
+     * @return \Illuminate\Http\Response
      * @throws \Dingo\Api\Exceptions\ResourceException
      */
-    protected function errorUnprocessable($message = null, $errors = null)
+    public function errorUnprocessable($message = null, $errors = null)
     {
         throw new ResourceException($message, $errors);
     }
 
     /**
-     * Throw the custom exception.
+     * Throws the custom exception.
      *
      * @param  string $message
      * @param  array $errors
      * @param  int $code
+     * @return \Illuminate\Http\Response
      * @throws \App\Exceptions\ApiCustomException
      */
-    protected function errorCustom($message = null, $errors = null, $code = null)
+    public function errorCustom($message = null, $errors = null, $code = null)
     {
         throw new ApiCustomException($message, $errors, $code);
+    }
+
+    /**
+     * Throws an exception.
+     *
+     * @param  \Exception $e
+     * @return \Illuminate\Http\Response
+     * @throws \Symfony\Component\HttpKernel\Exception\HttpException
+     */
+    public function errorException(Exception $e)
+    {
+        throw new HttpException($e->httpStatusCode, $e->getMessage(), $e, $e->getHttpHeaders());
     }
 
     /**
