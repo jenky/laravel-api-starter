@@ -28,7 +28,7 @@ class Controller extends BaseController
     {
         $resource = $resource->find($id);
 
-        if (is_null($resource) && !is_null($callback)) {
+        if (is_null($resource) && ! is_null($callback)) {
             return $callback;
         }
 
