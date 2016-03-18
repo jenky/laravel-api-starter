@@ -59,7 +59,9 @@ class ApiServiceProvider extends ServiceProvider
     protected function registerApiModelNotFoundException()
     {
         $this->app[Handler::class]->register(function (ModelNotFoundException $e) {
-            $message = $this->isApiDebugEnabled() ? $e->getMessage() : trans('error.resource_not_found', ['resource' => strtolower(class_basename($e->getModel()))]);
+            $message = $this->isApiDebugEnabled()
+                ? $e->getMessage()
+                : trans('error.resource_not_found', ['resource' => strtolower(class_basename($e->getModel()))]);
 
             throw new HttpException(404, $message, $e);
         });
