@@ -163,9 +163,9 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
-        Dingo\Api\Provider\LaravelServiceProvider::class,
         Jenky\LaravelApiHelper\ApiServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
+        Dingo\Api\Provider\LaravelServiceProvider::class,
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
 
         /*
