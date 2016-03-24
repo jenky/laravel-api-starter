@@ -80,7 +80,7 @@ class RouteServiceProvider extends ServiceProvider
     }
 
     /**
-     * Merge routes defined by packages to API router.
+     * Merge routes defined by packages into API router.
      *
      * @param  \Dingo\Api\Routing\Router  $api
      * @param  \Illuminate\Routing\Router  $router
