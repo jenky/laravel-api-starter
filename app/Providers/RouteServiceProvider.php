@@ -76,7 +76,9 @@ class RouteServiceProvider extends ServiceProvider
 
         require app_path('Http/api_routes.php');
 
-        $this->mergePackgeRoutes($api, $router);
+        if ($this->app['config']['api.domain']) {
+            $this->mergePackgeRoutes($api, $router);
+        }
     }
 
     /**
