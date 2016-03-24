@@ -11,12 +11,6 @@
 |
 */
 
-require app_path('Http/api_routes.php');
-
-Route::group(['middleware' => ['web']], function () {
-
-    Route::get('/', function () {
-        return view('welcome');
-    });
-
+Route::get('/', function () {
+    return view('welcome');
 });
