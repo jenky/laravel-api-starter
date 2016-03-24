@@ -10,8 +10,6 @@ class RateLimit extends ThrottleRequests
 {
     /**
      * {@inheritdoc}
-     *
-     * @throws \Symfony\Component\HttpKernel\Exception\HttpException
      */
     public function handle($request, Closure $next, $maxAttempts = 60, $decayMinutes = 1)
     {
