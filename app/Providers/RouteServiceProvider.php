@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use Barryvdh\Debugbar\LaravelDebugbar;
-use Barryvdh\Debugbar\Middleware\Debugbar;
 use Dingo\Api\Routing\Router as ApiRouter;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
@@ -40,8 +38,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
+        $this->mapApiRoutes($this->app[ApiRouter::class], $router);
         $this->mapWebRoutes($router);
-        $this->mapApiRoutes($this->app[ApiRouter::class]);
         //
     }
 
@@ -67,31 +65,40 @@ class RouteServiceProvider extends ServiceProvider
      *
      * These routes all receive CORS, rate limiting, etc.
      *
+     * @param  \Dingo\Api\Routing\Router  $api
      * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    protected function mapApiRoutes(ApiRouter $api)
+    protected function mapApiRoutes(ApiRouter $api, Router $router)
     {
         $middleware = ['api'];
-
-        // Seems like this didn't work cuz HTML response
-        // is missing all boilerplates.
-        // if ($this->isDebugbarEnabled()) {
-        //     $middleware[] = Debugbar::class;
-        // }
-
         $namespace = $this->namespace.'\\API\\';
 
         require app_path('Http/api_routes.php');
+
+        $this->mergePackgeRoutes($api, $router);
     }
 
     /**
-     * Check if debugbar is enabled.
+     * Merge routes defined by packages to API router.
      *
-     * @return bool
+     * @param  \Dingo\Api\Routing\Router  $api
+     * @param  \Illuminate\Routing\Router  $router
+     * @return void
      */
-    protected function isDebugbarEnabled()
+    protected function mergePackgeRoutes(ApiRouter &$api, Router $router)
     {
-        return class_exists(LaravelDebugbar::class) && ! is_null($this->app[LaravelDebugbar::class]);
+        foreach ($router->getRoutes() as $route) {
+            $api->version(array_keys($api->getRoutes()), function ($api) use ($route) {
+                $action = $route->getAction();
+
+                // Remove prefix if present
+                if (isset($action['prefix'])) {
+                    unset($action['prefix']);
+                }
+
+                $api->addRoute($route->getMethods(), $route->uri(), $action);
+            });
+        }
     }
 }
