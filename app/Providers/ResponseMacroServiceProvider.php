@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Serializers\JsonNormalizeSerializer;
 use Dingo\Api\Http\Response\Factory as ResponseFactory;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\ServiceProvider;
 use League\Fractal\Serializer\SerializerAbstract;
@@ -47,10 +48,13 @@ class ResponseMacroServiceProvider extends ServiceProvider
 
         Response::macro($name, function ($value, TransformerAbstract $transformer, $keys = [], SerializerAbstract $serializer = null) use ($app, $method) {
             $response = $app[ResponseFactory::class];
+            $method = $value instanceof LengthAwarePaginator ? 'paginator' : $method;
             $serializer = $serializer ?: new JsonNormalizeSerializer;
 
-            return $response->{$method}($value, $transformer, $keys, function ($resource, $fractal) use ($app, $serializer) {
-                $fractal->setSerializer($serializer);
+            return $response->{$method}($value, $transformer, $keys, function ($resource, $fractal) use ($app, $method, $serializer) {
+                if ($method != 'paginator') {
+                    $fractal->setSerializer($serializer);
+                }
 
                 $with = $app['config']->get('apihelper.prefix', '');
                 $with .= 'with';
