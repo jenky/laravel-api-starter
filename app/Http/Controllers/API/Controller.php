@@ -6,7 +6,7 @@ use App\Exceptions\ApiCustomException;
 use App\Exceptions\ApiValidationException;
 use App\Http\Controllers\Controller as BaseController;
 use App\Http\Requests\ValidationMessages;
-use Dingo\Api\Exceptions\ResourceException;
+use Dingo\Api\Exception\ResourceException;
 use Dingo\Api\Routing\Helpers;
 use Exception;
 use Illuminate\Http\Request;
@@ -117,7 +117,7 @@ class Controller extends BaseController
      * @param  string $message
      * @param  \Illuminate\Support\MessageBag|array $errors
      * @return \Illuminate\Http\Response
-     * @throws \Dingo\Api\Exceptions\ResourceException
+     * @throws \Dingo\Api\Exception\ResourceException
      */
     public function errorUnprocessable($message = null, $errors = null)
     {
