@@ -11,7 +11,8 @@ return [
     |
     */
 
-    'resource_not_found' => 'The requested :resource could not be found.',
-    'whoops'             => 'Whoops! Something went wrong. Please try again later.',
-    'try_again'          => 'Please try again later.',
+    'not_found' => 'The requested :resource could not be found.',
+    'whoops' => 'Whoops! Something went wrong. Please try again later.',
+    'try_again' => 'Please try again later.',
+    'no_permission' => 'You do not have permission to perform this action.',
 ];
