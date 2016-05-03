@@ -1,13 +1,13 @@
 {
   "private": true,
   "scripts": {
-    "apidoc": "apidoc -i docs -o public/docs"
+    "apidoc": "apidoc -i docs -o public/docs",
+    "prod": "gulp --production",
+    "dev": "gulp watch"
   },
   "devDependencies": {
-    "gulp": "^3.9.1"
-  },
-  "dependencies": {
+    "gulp": "^3.9.1",
     "laravel-elixir": "^5.0.0",
-    "bootstrap-sass": "^3.0.0"
+    "bootstrap-sass": "^3.3.0"
   }
 }
