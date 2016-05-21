@@ -165,9 +165,9 @@ return [
         Jenky\LaravelEnvLoader\EnvLoaderServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
+        Barryvdh\Cors\ServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Jenky\LaravelApiHelper\ApiServiceProvider::class,
-        Barryvdh\Cors\ServiceProvider::class,
         Dingo\Api\Provider\LaravelServiceProvider::class,
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
 
