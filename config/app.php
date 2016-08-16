@@ -174,6 +174,10 @@ return [
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
 
         /*
+         * Package Service Providers...
+         */
+
+        /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
